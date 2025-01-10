@@ -1,24 +1,130 @@
-[gd_scene load_steps=14 format=3 uid="uid://b35prlh0l78qk"]
+[gd_scene load_steps=23 format=3 uid="uid://b35prlh0l78qk"]
 
 [ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://PenumbraWebPro-Serif.ttf" id="1_qcvu1"]
 [ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://selawk.ttf" id="2_vejn1"]
 [ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://Drapeau.jpg" id="3_4nidr"]
 [ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://decorativeline.png" id="3_ah5fo"]
 [ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://human-ancestry-thumbnail.webp" id="4_5spa8"]
+[ext_resource type="Texture2D" uid="uid://buhhngxc3cnsx" path="res://Javani.png" id="6_5kv6n"]
 [ext_resource type="Script" path="res://physical.gd" id="6_mtwda"]
 [ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://PenumbraBold.tres" id="7_1evrt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4nch"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5girr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohr2q"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrjwu"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7k75q"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlbbs"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_8656j"]
 
 [sub_resource type="Theme" id="Theme_68jeh"]
 default_font = ExtResource("1_qcvu1")
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 40
 Button/fonts/font = ExtResource("1_qcvu1")
+Button/styles/disabled = SubResource("StyleBoxFlat_c4nch")
+Button/styles/focus = SubResource("StyleBoxFlat_5girr")
+Button/styles/hover = SubResource("StyleBoxFlat_ohr2q")
+Button/styles/normal = SubResource("StyleBoxFlat_lrjwu")
+Button/styles/pressed = SubResource("StyleBoxFlat_7k75q")
 CheckBox/fonts/font = ExtResource("1_qcvu1")
 CheckButton/fonts/font = ExtResource("1_qcvu1")
 CodeEdit/fonts/font = ExtResource("1_qcvu1")
 ColorPickerButton/fonts/font = ExtResource("1_qcvu1")
 GraphNodeTitleLabel/fonts/font = ExtResource("1_qcvu1")
 ItemList/fonts/font = ExtResource("1_qcvu1")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("1_qcvu1")
+Label/styles/normal = SubResource("StyleBoxEmpty_wlbbs")
 LineEdit/fonts/font = ExtResource("2_vejn1")
 LinkButton/fonts/font = ExtResource("1_qcvu1")
 MenuBar/fonts/font = ExtResource("1_qcvu1")
@@ -42,6 +148,12 @@ Tree/fonts/title_button_font = ExtResource("1_qcvu1")
 Window/fonts/title_font = ExtResource("1_qcvu1")
 
 [sub_resource type="Theme" id="Theme_xq6bc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p7y4"]
+bg_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jdhb"]
+bg_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhlq4"]
 
@@ -114,7 +226,7 @@ uppercase = true
 layout_mode = 2
 theme = SubResource("Theme_xq6bc")
 theme_override_fonts/font = ExtResource("1_qcvu1")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 40
 text = "ROLEPLAYING GAME"
 horizontal_alignment = 1
 uppercase = true
@@ -123,35 +235,239 @@ uppercase = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Top" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="Profile" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Top"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Top"]
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Profile"]
 layout_mode = 2
 texture = ExtResource("4_5spa8")
 expand_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Top"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Profile"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Top/VBoxContainer"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vejn1")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 50
 text = "Dalinar Kholin"
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Top/VBoxContainer"]
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vejn1")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 40
 text = "Human Soldier Level 1"
 
 [node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Ressources" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "HEALTH"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5p7y4")
+text = "-"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "11"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
+text = "/11"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8jdhb")
+text = "+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "FOCUS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5p7y4")
+text = "-"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "4"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
+text = "/4"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8jdhb")
+text = "+"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/CenterContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.716991, 0.606648, 0.28986, 1)
+theme_override_font_sizes/font_size = 30
+text = "DEFLECT"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/CenterContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.716991, 0.606648, 0.28986, 1)
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/CenterContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/CenterContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_5kv6n")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "INVESTITURE"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5p7y4")
+text = "-"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
+text = "/0"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8jdhb")
+text = "+"
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
 [node name="Attributes" type="ColorRect" parent="ColorRect/VBoxContainer"]
@@ -252,7 +568,6 @@ layout_mode = 2
 tooltip_text = "10 + STRENGTH + SPEED"
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
 text = "DEFENSE"
 horizontal_alignment = 1
 
