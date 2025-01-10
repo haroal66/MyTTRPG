@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://cnpfom1j7o1dg"]
+
+[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://PenumbraWebPro-Serif.ttf" id="1_do23t"]
+
+[resource]
+base_font = ExtResource("1_do23t")
+variation_embolden = 1.0
