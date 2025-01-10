@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b35prlh0l78qk"]
+[gd_scene load_steps=24 format=3 uid="uid://ctluggi7woql1"]
 
 [ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://PenumbraWebPro-Serif.ttf" id="1_qcvu1"]
 [ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://selawk.ttf" id="2_vejn1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://buhhngxc3cnsx" path="res://Javani.png" id="6_5kv6n"]
 [ext_resource type="Script" path="res://physical.gd" id="6_mtwda"]
 [ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://PenumbraBold.tres" id="7_1evrt"]
+[ext_resource type="Texture2D" uid="uid://deu3xn4jtisrp" path="res://Textures/Shield.png" id="8_x6gqa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4nch"]
 content_margin_left = 4.0
@@ -504,7 +505,7 @@ alignment = 1
 script = ExtResource("6_mtwda")
 line_edit_strength = NodePath("HBoxContainer/Strength/VBoxContainer/LineEdit")
 line_edit_speed = NodePath("HBoxContainer/Speed/VBoxContainer/LineEdit2")
-line_edit_defense = NodePath("HBoxContainer/Defense/ColorRect2/LineEdit3")
+line_edit_defense = NodePath("HBoxContainer/Defense/TextureRect/LineEdit3")
 line_edit_healthmax = NodePath("HBoxContainer2/Health/HBoxContainer/Max/LineEdit")
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical"]
@@ -571,22 +572,28 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "DEFENSE"
 horizontal_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense"]
-custom_minimum_size = Vector2(50, 50)
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense"]
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+texture = ExtResource("8_x6gqa")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="LineEdit3" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense/ColorRect2"]
+[node name="LineEdit3" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense/TextureRect"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.75
+offset_top = -10.0
+offset_right = 29.75
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_py152")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
 text = "0"
