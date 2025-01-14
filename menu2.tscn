@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ctluggi7woql1"]
+[gd_scene load_steps=21 format=3 uid="uid://ctluggi7woql1"]
 
 [ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://PenumbraWebPro-Serif.ttf" id="1_qcvu1"]
 [ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://selawk.ttf" id="2_vejn1"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://human-ancestry-thumbnail.webp" id="4_5spa8"]
 [ext_resource type="Texture2D" uid="uid://buhhngxc3cnsx" path="res://Javani.png" id="6_5kv6n"]
 [ext_resource type="Script" path="res://physical.gd" id="6_mtwda"]
+[ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="6_wkcly"]
 [ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://PenumbraBold.tres" id="7_1evrt"]
+[ext_resource type="Script" path="res://ressources.gd" id="7_hjhg8"]
 [ext_resource type="Texture2D" uid="uid://deu3xn4jtisrp" path="res://Textures/Shield.png" id="8_x6gqa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4nch"]
@@ -22,27 +24,6 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5girr"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohr2q"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -55,40 +36,16 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrjwu"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7k75q"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlbbs"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_8656j"]
 
 [sub_resource type="Theme" id="Theme_68jeh"]
 default_font = ExtResource("1_qcvu1")
-Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_color = Color(0.1, 0.1, 0.1, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
-Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_focus_color = Color(0.1, 0.1, 0.1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -105,10 +62,8 @@ Button/constants/outline_size = 0
 Button/font_sizes/font_size = 40
 Button/fonts/font = ExtResource("1_qcvu1")
 Button/styles/disabled = SubResource("StyleBoxFlat_c4nch")
-Button/styles/focus = SubResource("StyleBoxFlat_5girr")
 Button/styles/hover = SubResource("StyleBoxFlat_ohr2q")
-Button/styles/normal = SubResource("StyleBoxFlat_lrjwu")
-Button/styles/pressed = SubResource("StyleBoxFlat_7k75q")
+Button/styles/normal = ExtResource("6_wkcly")
 CheckBox/fonts/font = ExtResource("1_qcvu1")
 CheckButton/fonts/font = ExtResource("1_qcvu1")
 CodeEdit/fonts/font = ExtResource("1_qcvu1")
@@ -149,12 +104,6 @@ Tree/fonts/title_button_font = ExtResource("1_qcvu1")
 Window/fonts/title_font = ExtResource("1_qcvu1")
 
 [sub_resource type="Theme" id="Theme_xq6bc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p7y4"]
-bg_color = Color(0.85098, 0.85098, 0.85098, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jdhb"]
-bg_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhlq4"]
 
@@ -267,53 +216,59 @@ text = "Human Soldier Level 1"
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Ressources" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="Ressources" type="VBoxContainer" parent="ColorRect/VBoxContainer" node_paths=PackedStringArray("label_health", "label_healthmax", "label_focus", "label_focusmax", "label_investiture", "label_investituremax")]
+layout_mode = 2
+script = ExtResource("7_hjhg8")
+label_health = NodePath("Health/HBoxContainer/Label")
+label_healthmax = NodePath("Health/HBoxContainer/Label2")
+label_focus = NodePath("HBoxContainer2/Focus/HBoxContainer3/Label")
+label_focusmax = NodePath("HBoxContainer2/Focus/HBoxContainer3/Label2")
+label_investiture = NodePath("HBoxContainer2/Investiture/HBoxContainer4/Label")
+label_investituremax = NodePath("HBoxContainer2/Investiture/HBoxContainer4/Label2")
+
+[node name="Health" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/Health"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "HEALTH"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/Health"]
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_5p7y4")
 text = "-"
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "11"
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
 text = "/11"
 
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer"]
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_8jdhb")
 text = "+"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources"]
@@ -324,54 +279,50 @@ alignment = 1
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+[node name="Focus" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer"]
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "FOCUS"
 horizontal_alignment = 1
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus"]
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_5p7y4")
 text = "-"
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "4"
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
 text = "/4"
 
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_8jdhb")
 text = "+"
 
 [node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
@@ -417,58 +368,57 @@ stretch_mode = 4
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+[node name="Investiture" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3"]
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "INVESTITURE"
 horizontal_alignment = 1
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture"]
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_5p7y4")
 text = "-"
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "0"
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
 text = "/0"
 
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/VBoxContainer3/HBoxContainer4"]
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_8jdhb")
 text = "+"
 
 [node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
 custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect/VBoxContainer/Ressources"]
 layout_mode = 2
 
 [node name="Attributes" type="ColorRect" parent="ColorRect/VBoxContainer"]
@@ -780,6 +730,7 @@ custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="Attributes2" type="ColorRect" parent="ColorRect/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 color = Color(0.67, 0.619973, 0.4824, 1)
@@ -824,6 +775,7 @@ custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="Attributes3" type="ColorRect" parent="ColorRect/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 color = Color(0.67, 0.619973, 0.4824, 1)
@@ -866,3 +818,10 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes3/VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer/Button" to="ColorRect/VBoxContainer/Ressources" method="_on_minus_health_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer/Button2" to="ColorRect/VBoxContainer/Ressources" method="_on_plus_health_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3/Button" to="ColorRect/VBoxContainer/Ressources" method="_on_focus_minus_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3/Button2" to="ColorRect/VBoxContainer/Ressources" method="_on_focus_plus_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4/Button" to="ColorRect/VBoxContainer/Ressources" method="_on_minus_investiture_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4/Button2" to="ColorRect/VBoxContainer/Ressources" method="_on_plus_investiture_pressed"]
