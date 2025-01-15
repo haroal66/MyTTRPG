@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkccsi2tlqhdy"
-path="res://.godot/imported/Stormlight_Logo_Space_Era.svg-b2305559da4ced09b9d7abd13dfb1def.ctex"
+uid="uid://oewyaeofgml7"
+path="res://.godot/imported/Javani.svg-fa6a089031acc2b2094544f3f415430c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Stormlight_Logo_Space_Era.svg"
-dest_files=["res://.godot/imported/Stormlight_Logo_Space_Era.svg-b2305559da4ced09b9d7abd13dfb1def.ctex"]
+source_file="res://images/Javani.svg"
+dest_files=["res://.godot/imported/Javani.svg-fa6a089031acc2b2094544f3f415430c.ctex"]
 
 [params]
 

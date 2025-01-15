@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deu3xn4jtisrp"
-path="res://.godot/imported/Shield.png-6efc02da57fb7197c1e73a73991d5c96.ctex"
+uid="uid://dt11ygkdtbvme"
+path="res://.godot/imported/singer-ancestry-thumbnail.webp-e55f4e25e35cc411d5043c0ddb36eae2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Shield.png"
-dest_files=["res://.godot/imported/Shield.png-6efc02da57fb7197c1e73a73991d5c96.ctex"]
+source_file="res://images/singer-ancestry-thumbnail.webp"
+dest_files=["res://.godot/imported/singer-ancestry-thumbnail.webp-e55f4e25e35cc411d5043c0ddb36eae2.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=50
 detect_3d/compress_to=1

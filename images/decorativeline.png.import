@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://34kkimgbqxby"
-path="res://.godot/imported/decorativeline.png-b5748e285ed0fe82e0630ad16e4440fe.ctex"
+path="res://.godot/imported/decorativeline.png-0660d18a1d16a9821b9bfadaeb9b4588.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://decorativeline.png"
-dest_files=["res://.godot/imported/decorativeline.png-b5748e285ed0fe82e0630ad16e4440fe.ctex"]
+source_file="res://images/decorativeline.png"
+dest_files=["res://.godot/imported/decorativeline.png-0660d18a1d16a9821b9bfadaeb9b4588.ctex"]
 
 [params]
 

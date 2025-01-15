@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buhhngxc3cnsx"
-path="res://.godot/imported/Javani.png-4c29dc0f8f5125405ece8ccd55c461bd.ctex"
+uid="uid://b177aoepmeag5"
+path="res://.godot/imported/Kholin_Crest.png-ff4315f0560c2c4be87363bb403d0a34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Javani.png"
-dest_files=["res://.godot/imported/Javani.png-4c29dc0f8f5125405ece8ccd55c461bd.ctex"]
+source_file="res://images/Kholin_Crest.png"
+dest_files=["res://.godot/imported/Kholin_Crest.png-ff4315f0560c2c4be87363bb403d0a34.ctex"]
 
 [params]
 

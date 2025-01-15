@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://brbaj70ayt5xa"]
 
-[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://Drapeau.jpg" id="1_i8v4t"]
-[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://PenumbraWebPro-Serif.ttf" id="2_12g61"]
-[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://selawk.ttf" id="2_r2em2"]
-[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://human-ancestry-thumbnail.webp" id="4_718wf"]
-[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://PenumbraBold.tres" id="4_jl37a"]
-[ext_resource type="Texture2D" uid="uid://dt11ygkdtbvme" path="res://singer-ancestry-thumbnail.webp" id="5_rinss"]
-[ext_resource type="Script" path="res://physical.gd" id="6_ctviq"]
+[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="1_i8v4t"]
+[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="2_12g61"]
+[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="2_r2em2"]
+[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="4_718wf"]
+[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="4_jl37a"]
+[ext_resource type="Texture2D" uid="uid://dt11ygkdtbvme" path="res://images/singer-ancestry-thumbnail.webp" id="5_rinss"]
+[ext_resource type="Script" path="res://script/physical.gd" id="6_ctviq"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_8656j"]
 

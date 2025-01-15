@@ -1,16 +1,16 @@
-[gd_scene load_steps=21 format=3 uid="uid://ctluggi7woql1"]
+[gd_scene load_steps=19 format=3 uid="uid://ctluggi7woql1"]
 
-[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://PenumbraWebPro-Serif.ttf" id="1_qcvu1"]
-[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://selawk.ttf" id="2_vejn1"]
-[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://Drapeau.jpg" id="3_4nidr"]
-[ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://decorativeline.png" id="3_ah5fo"]
-[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://human-ancestry-thumbnail.webp" id="4_5spa8"]
-[ext_resource type="Texture2D" uid="uid://buhhngxc3cnsx" path="res://Javani.png" id="6_5kv6n"]
-[ext_resource type="Script" path="res://physical.gd" id="6_mtwda"]
+[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_qcvu1"]
+[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="2_vejn1"]
+[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="3_4nidr"]
+[ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="3_ah5fo"]
+[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="4_5spa8"]
+[ext_resource type="Script" path="res://script/physical.gd" id="6_mtwda"]
 [ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="6_wkcly"]
-[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://PenumbraBold.tres" id="7_1evrt"]
-[ext_resource type="Script" path="res://ressources.gd" id="7_hjhg8"]
-[ext_resource type="Texture2D" uid="uid://deu3xn4jtisrp" path="res://Textures/Shield.png" id="8_x6gqa"]
+[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="7_1evrt"]
+[ext_resource type="Script" path="res://script/ressources.gd" id="7_hjhg8"]
+[ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="8_4nc5n"]
+[ext_resource type="Texture2D" uid="uid://cvn1w1f18ps8x" path="res://images/Kholin_Crest_full.svg" id="11_w1l36"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4nch"]
 content_margin_left = 4.0
@@ -81,6 +81,7 @@ Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 40
 Label/fonts/font = ExtResource("1_qcvu1")
 Label/styles/normal = SubResource("StyleBoxEmpty_wlbbs")
+LineEdit/font_sizes/font_size = 40
 LineEdit/fonts/font = ExtResource("2_vejn1")
 LinkButton/fonts/font = ExtResource("1_qcvu1")
 MenuBar/fonts/font = ExtResource("1_qcvu1")
@@ -106,10 +107,6 @@ Window/fonts/title_font = ExtResource("1_qcvu1")
 [sub_resource type="Theme" id="Theme_xq6bc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhlq4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_py152"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4p4ee"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -360,7 +357,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("6_5kv6n")
+texture = ExtResource("8_4nc5n")
 expand_mode = 5
 stretch_mode = 4
 
@@ -418,11 +415,13 @@ text = "+"
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="ColorRect/VBoxContainer/Ressources"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="Attributes" type="ColorRect" parent="ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 200)
+clip_contents = true
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 color = Color(0.67, 0.619973, 0.4824, 1)
 
@@ -447,7 +446,7 @@ theme_override_constants/separation = 10
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Physical" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("line_edit_strength", "line_edit_speed", "line_edit_defense", "line_edit_healthmax")]
+[node name="Physical" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("line_edit_strength", "line_edit_speed", "label_defense", "label_healthmax")]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
@@ -455,8 +454,8 @@ alignment = 1
 script = ExtResource("6_mtwda")
 line_edit_strength = NodePath("HBoxContainer/Strength/VBoxContainer/LineEdit")
 line_edit_speed = NodePath("HBoxContainer/Speed/VBoxContainer/LineEdit2")
-line_edit_defense = NodePath("HBoxContainer/Defense/TextureRect/LineEdit3")
-line_edit_healthmax = NodePath("HBoxContainer2/Health/HBoxContainer/Max/LineEdit")
+label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
+label_healthmax = NodePath("../../../../Ressources/Health/HBoxContainer/Label2")
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical"]
 layout_mode = 2
@@ -467,7 +466,7 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical"]
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 3
 theme_override_constants/separation = 15
 
 [node name="Strength" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
@@ -491,7 +490,7 @@ layout_mode = 2
 tooltip_text = "Your physical power, toughness, and athleticism"
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 50
 text = "STRENGTH"
 horizontal_alignment = 1
 
@@ -502,6 +501,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
 text = "0"
 alignment = 1
@@ -511,7 +511,6 @@ virtual_keyboard_type = 2
 [node name="Defense" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
 alignment = 1
 
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense"]
@@ -519,38 +518,35 @@ layout_mode = 2
 tooltip_text = "10 + STRENGTH + SPEED"
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
 text = "DEFENSE"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense"]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(60, 125)
 layout_mode = 2
-texture = ExtResource("8_x6gqa")
+size_flags_vertical = 3
+texture = ExtResource("11_w1l36")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="LineEdit3" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense/TextureRect"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.75
-offset_top = -10.0
-offset_right = 29.75
-offset_bottom = 10.0
+offset_left = -20.0
+offset_top = -42.1537
+offset_right = 19.0
+offset_bottom = 31.8463
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_py152")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+theme_override_font_sizes/font_size = 50
 text = "0"
-alignment = 1
-max_length = 2
-editable = false
-virtual_keyboard_type = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Speed" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
@@ -572,7 +568,7 @@ layout_mode = 2
 tooltip_text = "Your quickness and dexterity"
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 50
 text = "SPEED"
 horizontal_alignment = 1
 
@@ -583,143 +579,12 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
 text = "0"
 alignment = 1
 max_length = 2
 virtual_keyboard_type = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="Health" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2"]
-clip_contents = true
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 10.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Max" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_stretch_ratio = 2.0
-alignment = 1
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer/Max"]
-layout_mode = 2
-tooltip_text = "Your stamina and resistance to minor injuries"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
-text = "HEALTH"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer/Max"]
-layout_mode = 2
-tooltip_text = "10 + STRENGTH"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 7
-text = "Maximum"
-horizontal_alignment = 1
-
-[node name="LineEdit" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer/Max"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_4p4ee")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
-text = "0"
-alignment = 1
-max_length = 2
-editable = false
-virtual_keyboard_type = 2
-
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer"]
-custom_minimum_size = Vector2(20, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.5
-
-[node name="Current" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_stretch_ratio = 2.0
-alignment = 1
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer/Current"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 8
-text = "Current"
-horizontal_alignment = 1
-
-[node name="LineEdit3" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer/Current"]
-layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_py152")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
-text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Speed" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/VBoxContainer"]
-custom_minimum_size = Vector2(60, 50)
-layout_mode = 2
-
-[node name="LineEdit2" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/VBoxContainer/Speed"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
-text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/VBoxContainer"]
-layout_mode = 2
-tooltip_text = "ARMOR"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
-text = "DEFLECT"
-horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(10, 0)

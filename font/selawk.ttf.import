@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bjlv64ufrkldd"
-path="res://.godot/imported/selawk.ttf-f3a16344217bc0e0c5410cf2fee54ea9.fontdata"
+path="res://.godot/imported/selawk.ttf-c9e5177489d18dfa40f709d94cd7bb15.fontdata"
 
 [deps]
 
-source_file="res://selawk.ttf"
-dest_files=["res://.godot/imported/selawk.ttf-f3a16344217bc0e0c5410cf2fee54ea9.fontdata"]
+source_file="res://font/selawk.ttf"
+dest_files=["res://.godot/imported/selawk.ttf-c9e5177489d18dfa40f709d94cd7bb15.fontdata"]
 
 [params]
 

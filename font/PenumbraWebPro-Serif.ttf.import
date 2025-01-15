@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cahigei6y27u0"
-path="res://.godot/imported/PenumbraWebPro-Serif.ttf-38cd8e8030111d3c2ce6eca450986892.fontdata"
+path="res://.godot/imported/PenumbraWebPro-Serif.ttf-c96377ffc0da8ca6d93927c8c5405df5.fontdata"
 
 [deps]
 
-source_file="res://PenumbraWebPro-Serif.ttf"
-dest_files=["res://.godot/imported/PenumbraWebPro-Serif.ttf-38cd8e8030111d3c2ce6eca450986892.fontdata"]
+source_file="res://font/PenumbraWebPro-Serif.ttf"
+dest_files=["res://.godot/imported/PenumbraWebPro-Serif.ttf-c96377ffc0da8ca6d93927c8c5405df5.fontdata"]
 
 [params]
 

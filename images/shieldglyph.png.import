@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmxgnmy82vc3w"
-path="res://.godot/imported/human-ancestry-thumbnail.webp-c98b359ecdb2249b77e2dfbf3a87d30e.ctex"
+uid="uid://cw0i14puu5hn8"
+path="res://.godot/imported/shieldglyph.png-b3f1b3c0f87a4376b0c87b44ee07052e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://human-ancestry-thumbnail.webp"
-dest_files=["res://.godot/imported/human-ancestry-thumbnail.webp-c98b359ecdb2249b77e2dfbf3a87d30e.ctex"]
+source_file="res://images/shieldglyph.png"
+dest_files=["res://.godot/imported/shieldglyph.png-b3f1b3c0f87a4376b0c87b44ee07052e.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=200
+process/size_limit=0
 detect_3d/compress_to=1
