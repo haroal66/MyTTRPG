@@ -1,0 +1,548 @@
+[gd_scene load_steps=14 format=3 uid="uid://bvbl4firmpu2i"]
+
+[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_fnpnn"]
+[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="2_j2hag"]
+[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="3_r24s8"]
+[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="4_qxlhi"]
+[ext_resource type="Texture2D" uid="uid://dt11ygkdtbvme" path="res://images/singer-ancestry-thumbnail.webp" id="5_syj5e"]
+[ext_resource type="Script" path="res://script/physical.gd" id="6_xbj6n"]
+[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="7_6jgk1"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_8656j"]
+
+[sub_resource type="Theme" id="Theme_68jeh"]
+default_font = ExtResource("1_fnpnn")
+Button/fonts/font = ExtResource("1_fnpnn")
+CheckBox/fonts/font = ExtResource("1_fnpnn")
+CheckButton/fonts/font = ExtResource("1_fnpnn")
+CodeEdit/fonts/font = ExtResource("1_fnpnn")
+ColorPickerButton/fonts/font = ExtResource("1_fnpnn")
+GraphNodeTitleLabel/fonts/font = ExtResource("1_fnpnn")
+ItemList/fonts/font = ExtResource("1_fnpnn")
+LineEdit/fonts/font = ExtResource("2_j2hag")
+LinkButton/fonts/font = ExtResource("1_fnpnn")
+MenuBar/fonts/font = ExtResource("1_fnpnn")
+MenuButton/fonts/font = ExtResource("1_fnpnn")
+OptionButton/fonts/font = ExtResource("2_j2hag")
+PopupMenu/fonts/font = ExtResource("2_j2hag")
+PopupMenu/fonts/font_separator = ExtResource("1_fnpnn")
+ProgressBar/fonts/font = ExtResource("1_fnpnn")
+RichTextLabel/fonts/bold_font = ExtResource("1_fnpnn")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_fnpnn")
+RichTextLabel/fonts/italics_font = ExtResource("1_fnpnn")
+RichTextLabel/fonts/mono_font = ExtResource("1_fnpnn")
+RichTextLabel/fonts/normal_font = ExtResource("1_fnpnn")
+SpinBox/icons/updown = SubResource("ImageTexture_8656j")
+TabBar/fonts/font = ExtResource("1_fnpnn")
+TabContainer/fonts/font = ExtResource("1_fnpnn")
+TextEdit/fonts/font = ExtResource("1_fnpnn")
+TooltipLabel/fonts/font = ExtResource("2_j2hag")
+Tree/fonts/font = ExtResource("1_fnpnn")
+Tree/fonts/title_button_font = ExtResource("1_fnpnn")
+Window/fonts/title_font = ExtResource("1_fnpnn")
+
+[sub_resource type="Theme" id="Theme_xq6bc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhlq4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_py152"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4p4ee"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_68jeh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.0941176, 0.188235, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.997187)
+
+[node name="Top" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="HBoxContainer" parent="ColorRect/VBoxContainer/Top"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Logo" type="TextureRect" parent="ColorRect/VBoxContainer/Top/Title"]
+custom_minimum_size = Vector2(50, 150)
+layout_mode = 2
+texture = ExtResource("3_r24s8")
+expand_mode = 3
+
+[node name="Title text" type="VBoxContainer" parent="ColorRect/VBoxContainer/Top/Title"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Top/Title/Title text"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fnpnn")
+theme_override_font_sizes/font_size = 50
+text = "STORMLIGHT"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Top/Title/Title text"]
+layout_mode = 2
+theme = SubResource("Theme_xq6bc")
+theme_override_fonts/font = ExtResource("1_fnpnn")
+theme_override_font_sizes/font_size = 20
+text = "ROLEPLAYING GAME"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="RightGrid" type="GridContainer" parent="ColorRect/VBoxContainer/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Top/RightGrid"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Top/RightGrid"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="CharacterName" type="HBoxContainer" parent="ColorRect/VBoxContainer/Top/RightGrid"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Top/RightGrid/CharacterName"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Top/RightGrid/CharacterName"]
+layout_mode = 2
+text = "Character Name"
+uppercase = true
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect/VBoxContainer/Top/RightGrid/CharacterName"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Level" type="HBoxContainer" parent="ColorRect/VBoxContainer/Top/RightGrid"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Top/RightGrid/Level"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Top/RightGrid/Level"]
+layout_mode = 2
+text = "Level"
+uppercase = true
+
+[node name="SpinBox" type="SpinBox" parent="ColorRect/VBoxContainer/Top/RightGrid/Level"]
+layout_mode = 2
+max_value = 50.0
+rounded = true
+alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer/Top/RightGrid/Level"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Paths" type="HBoxContainer" parent="ColorRect/VBoxContainer/Top/RightGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Top/RightGrid/Paths"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Top/RightGrid/Paths"]
+layout_mode = 2
+tooltip_text = "Characters gain most of their abilities from paths, reflecting their specialty, training, and experience"
+mouse_filter = 0
+text = "Paths"
+uppercase = true
+
+[node name="OptionButton2" type="OptionButton" parent="ColorRect/VBoxContainer/Top/RightGrid/Paths"]
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "Agent"
+popup/item_1/text = "Envoy"
+popup/item_1/id = 1
+popup/item_2/text = "Hunter"
+popup/item_2/id = 2
+popup/item_3/text = "Leader"
+popup/item_3/id = 3
+popup/item_4/text = "Scholar"
+popup/item_4/id = 4
+popup/item_5/text = "Soldier"
+popup/item_5/id = 5
+
+[node name="Ancestry" type="HBoxContainer" parent="ColorRect/VBoxContainer/Top/RightGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Top/RightGrid/Ancestry"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Top/RightGrid/Ancestry"]
+layout_mode = 2
+tooltip_text = "Your ancestry represents the species you are descended from"
+mouse_filter = 0
+text = "Ancestry"
+uppercase = true
+
+[node name="OptionButton" type="OptionButton" parent="ColorRect/VBoxContainer/Top/RightGrid/Ancestry"]
+layout_mode = 2
+expand_icon = true
+item_count = 2
+popup/item_0/text = "Human"
+popup/item_0/icon = ExtResource("4_qxlhi")
+popup/item_1/text = "Singer"
+popup/item_1/icon = ExtResource("5_syj5e")
+popup/item_1/id = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Top/RightGrid/Ancestry"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Attributes" type="ColorRect" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+color = Color(0.67, 0.619973, 0.4824, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Physical" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("line_edit_strength", "line_edit_speed")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
+script = ExtResource("6_xbj6n")
+line_edit_strength = NodePath("HBoxContainer/Strength/VBoxContainer/LineEdit")
+line_edit_speed = NodePath("HBoxContainer/Speed/VBoxContainer/LineEdit2")
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("7_6jgk1")
+text = "PHYSICAL"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Strength" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Your physical power, toughness, and athleticism"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "STRENGTH"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+
+[node name="Defense" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense"]
+layout_mode = 2
+tooltip_text = "10 + STRENGTH + SPEED"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "DEFENSE"
+horizontal_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="LineEdit3" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_py152")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+editable = false
+virtual_keyboard_type = 2
+
+[node name="Speed" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Your quickness and dexterity"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "SPEED"
+horizontal_alignment = 1
+
+[node name="LineEdit2" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Health" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Max" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 2.0
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer/Max"]
+layout_mode = 2
+tooltip_text = "Your stamina and resistance to minor injuries"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "HEALTH"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer/Max"]
+layout_mode = 2
+tooltip_text = "10 + STRENGTH"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 7
+text = "Maximum"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer/Max"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_4p4ee")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+editable = false
+virtual_keyboard_type = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Current" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 2.0
+alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer/Current"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "Current"
+horizontal_alignment = 1
+
+[node name="LineEdit3" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/Health/HBoxContainer/Current"]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_py152")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Speed" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+
+[node name="LineEdit2" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/VBoxContainer/Speed"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Physical/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "ARMOR"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "DEFLECT"
+horizontal_alignment = 1
+
+[node name="Cognitive" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Cognitive"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_6jgk1")
+text = "Cognitive"
+horizontal_alignment = 1
+
+[node name="Spiritual" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2/Spiritual"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_6jgk1")
+text = "SPIRITUAL"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2

@@ -14,20 +14,15 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-	
 func _button_plus(currentLabel : Label, maxLabel : Label) -> void:
-	var new = currentLabel.text.to_int() + 1 if currentLabel.text.is_valid_int() else 0
+	var newValue = currentLabel.text.to_int() + 1 if currentLabel.text.is_valid_int() else 0
 	var max_text = maxLabel.text.replace("/","")
-	var max = max_text.to_int() if max_text.is_valid_int() else 0
-	currentLabel.text = str(new if new <= max else max)
+	var maxValue = max_text.to_int() if max_text.is_valid_int() else 0
+	currentLabel.text = str(newValue if newValue <= maxValue else maxValue)
 
 func _button_minus(currentLabel : Label) -> void:
-	var new = currentLabel.text.to_int() - 1 if currentLabel.text.is_valid_int() else 0
-	currentLabel.text = str(new if new >= 0 else 0)
+	var newValue = currentLabel.text.to_int() - 1 if currentLabel.text.is_valid_int() else 0
+	currentLabel.text = str(newValue if newValue >= 0 else 0)
 
 func _on_plus_health_pressed() -> void:
 	_button_plus(label_health, label_healthmax)

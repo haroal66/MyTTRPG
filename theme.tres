@@ -1,0 +1,98 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bnxupl5pqwxf1"]
+
+[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_uknj3"]
+[ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="2_ip7pf"]
+[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="3_q3i53"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4nch"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohr2q"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlbbs"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_8656j"]
+
+[resource]
+default_font = ExtResource("1_uknj3")
+Button/colors/font_color = Color(0.1, 0.1, 0.1, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.1, 0.1, 0.1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_uknj3")
+Button/styles/disabled = SubResource("StyleBoxFlat_c4nch")
+Button/styles/hover = SubResource("StyleBoxFlat_ohr2q")
+Button/styles/normal = ExtResource("2_ip7pf")
+CheckBox/fonts/font = ExtResource("1_uknj3")
+CheckButton/fonts/font = ExtResource("1_uknj3")
+CodeEdit/fonts/font = ExtResource("1_uknj3")
+ColorPickerButton/fonts/font = ExtResource("1_uknj3")
+GraphNodeTitleLabel/fonts/font = ExtResource("1_uknj3")
+ItemList/fonts/font = ExtResource("1_uknj3")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("1_uknj3")
+Label/styles/normal = SubResource("StyleBoxEmpty_wlbbs")
+LineEdit/font_sizes/font_size = 40
+LineEdit/fonts/font = ExtResource("3_q3i53")
+LinkButton/fonts/font = ExtResource("1_uknj3")
+MenuBar/fonts/font = ExtResource("1_uknj3")
+MenuButton/fonts/font = ExtResource("1_uknj3")
+OptionButton/fonts/font = ExtResource("3_q3i53")
+PopupMenu/constants/icon_max_width = 20
+PopupMenu/fonts/font = ExtResource("3_q3i53")
+PopupMenu/fonts/font_separator = ExtResource("1_uknj3")
+ProgressBar/fonts/font = ExtResource("1_uknj3")
+RichTextLabel/fonts/bold_font = ExtResource("1_uknj3")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_uknj3")
+RichTextLabel/fonts/italics_font = ExtResource("1_uknj3")
+RichTextLabel/fonts/mono_font = ExtResource("1_uknj3")
+RichTextLabel/fonts/normal_font = ExtResource("1_uknj3")
+SpinBox/icons/updown = SubResource("ImageTexture_8656j")
+TabBar/fonts/font = ExtResource("1_uknj3")
+TabContainer/fonts/font = ExtResource("1_uknj3")
+TextEdit/fonts/font = ExtResource("1_uknj3")
+TooltipLabel/fonts/font = ExtResource("3_q3i53")
+Tree/fonts/font = ExtResource("1_uknj3")
+Tree/fonts/title_button_font = ExtResource("1_uknj3")
+Window/fonts/title_font = ExtResource("1_uknj3")

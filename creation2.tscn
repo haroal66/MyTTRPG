@@ -1,111 +1,20 @@
-[gd_scene load_steps=23 format=3 uid="uid://ctluggi7woql1"]
+[gd_scene load_steps=19 format=3 uid="uid://dl3rr33ghb2be"]
 
-[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_qcvu1"]
-[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="2_vejn1"]
-[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="3_4nidr"]
-[ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="3_ah5fo"]
-[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="4_5spa8"]
-[ext_resource type="Script" path="res://script/save.gd" id="4_i4oij"]
-[ext_resource type="Script" path="res://script/physical.gd" id="6_mtwda"]
-[ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="6_wkcly"]
-[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="7_1evrt"]
-[ext_resource type="Script" path="res://script/ressources.gd" id="7_hjhg8"]
-[ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="8_4nc5n"]
-[ext_resource type="Texture2D" uid="uid://cvn1w1f18ps8x" path="res://images/Kholin_Crest_full.svg" id="11_w1l36"]
-[ext_resource type="Script" path="res://script/cognitive.gd" id="12_kljaa"]
-[ext_resource type="Script" path="res://script/spiritual.gd" id="13_w55re"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4nch"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohr2q"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.225, 0.225, 0.225, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlbbs"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_8656j"]
-
-[sub_resource type="Theme" id="Theme_68jeh"]
-default_font = ExtResource("1_qcvu1")
-Button/colors/font_color = Color(0.1, 0.1, 0.1, 1)
-Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
-Button/colors/font_focus_color = Color(0.1, 0.1, 0.1, 1)
-Button/colors/font_hover_color = Color(1, 1, 1, 1)
-Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
-Button/colors/icon_focus_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_normal_color = Color(1, 1, 1, 1)
-Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
-Button/constants/align_to_largest_stylebox = 0
-Button/constants/h_separation = 4
-Button/constants/icon_max_width = 0
-Button/constants/outline_size = 0
-Button/font_sizes/font_size = 40
-Button/fonts/font = ExtResource("1_qcvu1")
-Button/styles/disabled = SubResource("StyleBoxFlat_c4nch")
-Button/styles/hover = SubResource("StyleBoxFlat_ohr2q")
-Button/styles/normal = ExtResource("6_wkcly")
-CheckBox/fonts/font = ExtResource("1_qcvu1")
-CheckButton/fonts/font = ExtResource("1_qcvu1")
-CodeEdit/fonts/font = ExtResource("1_qcvu1")
-ColorPickerButton/fonts/font = ExtResource("1_qcvu1")
-GraphNodeTitleLabel/fonts/font = ExtResource("1_qcvu1")
-ItemList/fonts/font = ExtResource("1_qcvu1")
-Label/colors/font_color = Color(1, 1, 1, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/line_spacing = 3
-Label/constants/outline_size = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/constants/shadow_outline_size = 1
-Label/font_sizes/font_size = 40
-Label/fonts/font = ExtResource("1_qcvu1")
-Label/styles/normal = SubResource("StyleBoxEmpty_wlbbs")
-LineEdit/font_sizes/font_size = 40
-LineEdit/fonts/font = ExtResource("2_vejn1")
-LinkButton/fonts/font = ExtResource("1_qcvu1")
-MenuBar/fonts/font = ExtResource("1_qcvu1")
-MenuButton/fonts/font = ExtResource("1_qcvu1")
-OptionButton/fonts/font = ExtResource("2_vejn1")
-PopupMenu/fonts/font = ExtResource("2_vejn1")
-PopupMenu/fonts/font_separator = ExtResource("1_qcvu1")
-ProgressBar/fonts/font = ExtResource("1_qcvu1")
-RichTextLabel/fonts/bold_font = ExtResource("1_qcvu1")
-RichTextLabel/fonts/bold_italics_font = ExtResource("1_qcvu1")
-RichTextLabel/fonts/italics_font = ExtResource("1_qcvu1")
-RichTextLabel/fonts/mono_font = ExtResource("1_qcvu1")
-RichTextLabel/fonts/normal_font = ExtResource("1_qcvu1")
-SpinBox/icons/updown = SubResource("ImageTexture_8656j")
-TabBar/fonts/font = ExtResource("1_qcvu1")
-TabContainer/fonts/font = ExtResource("1_qcvu1")
-TextEdit/fonts/font = ExtResource("1_qcvu1")
-TooltipLabel/fonts/font = ExtResource("2_vejn1")
-Tree/fonts/font = ExtResource("1_qcvu1")
-Tree/fonts/title_button_font = ExtResource("1_qcvu1")
-Window/fonts/title_font = ExtResource("1_qcvu1")
+[ext_resource type="Theme" uid="uid://bnxupl5pqwxf1" path="res://theme.tres" id="1_kaugj"]
+[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_ldj68"]
+[ext_resource type="Script" path="res://creation.gd" id="2_0i34l"]
+[ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="2_hj6i5"]
+[ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="5_x6sj4"]
+[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="6_by6v1"]
+[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="7_mtk2g"]
+[ext_resource type="Script" path="res://script/ressources.gd" id="8_a7jr1"]
+[ext_resource type="Texture2D" uid="uid://dt11ygkdtbvme" path="res://images/singer-ancestry-thumbnail.webp" id="8_trocc"]
+[ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="9_xhfpe"]
+[ext_resource type="Script" path="res://script/physical.gd" id="10_h15go"]
+[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="11_xfqi3"]
+[ext_resource type="Texture2D" uid="uid://cvn1w1f18ps8x" path="res://images/Kholin_Crest_full.svg" id="12_8ue2m"]
+[ext_resource type="Script" path="res://script/cognitive.gd" id="13_rjl00"]
+[ext_resource type="Script" path="res://script/spiritual.gd" id="14_k5gyi"]
 
 [sub_resource type="Theme" id="Theme_xq6bc"]
 
@@ -120,7 +29,7 @@ func _ready() -> void:
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhlq4"]
 
-[node name="Menu" type="Control"]
+[node name="Creation" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,8 +38,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_68jeh")
-script = ExtResource("4_i4oij")
+theme = ExtResource("1_kaugj")
+script = ExtResource("2_0i34l")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -157,7 +66,7 @@ scale = Vector2(1, 0.997187)
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 4
-texture = ExtResource("3_ah5fo")
+texture = ExtResource("5_x6sj4")
 expand_mode = 5
 
 [node name="Title" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
@@ -169,7 +78,7 @@ alignment = 1
 [node name="Logo" type="TextureRect" parent="ColorRect/VBoxContainer/Title"]
 custom_minimum_size = Vector2(50, 115)
 layout_mode = 2
-texture = ExtResource("3_4nidr")
+texture = ExtResource("6_by6v1")
 expand_mode = 3
 
 [node name="Title text" type="VBoxContainer" parent="ColorRect/VBoxContainer/Title"]
@@ -179,7 +88,7 @@ size_flags_vertical = 6
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Title/Title text"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_qcvu1")
+theme_override_fonts/font = ExtResource("1_ldj68")
 theme_override_font_sizes/font_size = 100
 text = "STORMLIGHT"
 horizontal_alignment = 1
@@ -188,7 +97,7 @@ uppercase = true
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Title/Title text"]
 layout_mode = 2
 theme = SubResource("Theme_xq6bc")
-theme_override_fonts/font = ExtResource("1_qcvu1")
+theme_override_fonts/font = ExtResource("1_ldj68")
 theme_override_font_sizes/font_size = 40
 text = "ROLEPLAYING GAME"
 horizontal_alignment = 1
@@ -205,25 +114,107 @@ layout_mode = 2
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Profile"]
+[node name="RightGrid" type="GridContainer" parent="ColorRect/VBoxContainer/Profile"]
 layout_mode = 2
-texture = ExtResource("4_5spa8")
-expand_mode = 3
+size_flags_horizontal = 3
+columns = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Profile"]
+[node name="CharacterName" type="HBoxContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/RightGrid/CharacterName"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vejn1")
-theme_override_font_sizes/font_size = 50
-text = "Dalinar Kholin"
+text = "Character Name"
+uppercase = true
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="ColorRect/VBoxContainer/Profile/RightGrid/CharacterName"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vejn1")
-theme_override_font_sizes/font_size = 40
-text = "Human Soldier Level 1"
+theme_override_styles/focus = ExtResource("2_hj6i5")
+theme_override_styles/normal = ExtResource("2_hj6i5")
+
+[node name="Level" type="HBoxContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/RightGrid/Level"]
+layout_mode = 2
+text = "Level"
+uppercase = true
+
+[node name="LineEdit2" type="LineEdit" parent="ColorRect/VBoxContainer/Profile/RightGrid/Level"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = ExtResource("2_hj6i5")
+theme_override_styles/normal = ExtResource("2_hj6i5")
+text = "1"
+virtual_keyboard_type = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid/Level"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Paths" type="HBoxContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/RightGrid/Paths"]
+layout_mode = 2
+tooltip_text = "Characters gain most of their abilities from paths, reflecting their specialty, training, and experience"
+mouse_filter = 0
+text = "Paths"
+uppercase = true
+
+[node name="OptionButton2" type="OptionButton" parent="ColorRect/VBoxContainer/Profile/RightGrid/Paths"]
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "Agent"
+popup/item_1/text = "Envoy"
+popup/item_1/id = 1
+popup/item_2/text = "Hunter"
+popup/item_2/id = 2
+popup/item_3/text = "Leader"
+popup/item_3/id = 3
+popup/item_4/text = "Scholar"
+popup/item_4/id = 4
+popup/item_5/text = "Soldier"
+popup/item_5/id = 5
+
+[node name="Ancestry" type="HBoxContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry"]
+layout_mode = 2
+tooltip_text = "Your ancestry represents the species you are descended from"
+mouse_filter = 0
+text = "Ancestry"
+uppercase = true
+
+[node name="OptionButton" type="OptionButton" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry"]
+layout_mode = 2
+expand_icon = true
+item_count = 2
+popup/item_0/text = "Human"
+popup/item_0/icon = ExtResource("7_mtk2g")
+popup/item_1/text = "Singer"
+popup/item_1/icon = ExtResource("8_trocc")
+popup/item_1/id = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -231,7 +222,7 @@ layout_mode = 2
 
 [node name="Ressources" type="VBoxContainer" parent="ColorRect/VBoxContainer" node_paths=PackedStringArray("label_health", "label_healthmax", "label_focus", "label_focusmax", "label_investiture", "label_investituremax")]
 layout_mode = 2
-script = ExtResource("7_hjhg8")
+script = ExtResource("8_a7jr1")
 label_health = NodePath("Health/HBoxContainer/Health")
 label_healthmax = NodePath("Health/HBoxContainer/Label2")
 label_focus = NodePath("HBoxContainer2/Focus/HBoxContainer3/Focus")
@@ -374,7 +365,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("8_4nc5n")
+texture = ExtResource("9_xhfpe")
 expand_mode = 5
 stretch_mode = 4
 
@@ -468,7 +459,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 1
-script = ExtResource("6_mtwda")
+script = ExtResource("10_h15go")
 line_edit_strength = NodePath("HBoxContainer/Strength/VBoxContainer/Strength")
 line_edit_speed = NodePath("HBoxContainer/Speed/VBoxContainer/Speed")
 label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
@@ -477,7 +468,7 @@ label_healthmax = NodePath("../../../../Ressources/Health/HBoxContainer/Label2")
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("7_1evrt")
+theme_override_fonts/font = ExtResource("11_xfqi3")
 text = "PHYSICAL"
 horizontal_alignment = 1
 
@@ -543,7 +534,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 125)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("11_w1l36")
+texture = ExtResource("12_8ue2m")
 expand_mode = 1
 stretch_mode = 5
 
@@ -643,7 +634,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 1
-script = ExtResource("12_kljaa")
+script = ExtResource("13_rjl00")
 line_edit_intellect = NodePath("HBoxContainer/Intellect/VBoxContainer/Intellect")
 line_edit_willpower = NodePath("HBoxContainer/Willpower/VBoxContainer/Willpower")
 label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
@@ -652,7 +643,7 @@ label_focusmax = NodePath("../../../../Ressources/HBoxContainer2/Focus/HBoxConta
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("7_1evrt")
+theme_override_fonts/font = ExtResource("11_xfqi3")
 text = "COGNITIVE"
 horizontal_alignment = 1
 
@@ -718,7 +709,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 125)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("11_w1l36")
+texture = ExtResource("12_8ue2m")
 expand_mode = 1
 stretch_mode = 5
 
@@ -818,7 +809,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 1
-script = ExtResource("13_w55re")
+script = ExtResource("14_k5gyi")
 line_edit_awareness = NodePath("HBoxContainer/Awareness/VBoxContainer/Awareness")
 line_edit_presence = NodePath("HBoxContainer/Presence/VBoxContainer/Presence")
 label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
@@ -826,7 +817,7 @@ label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("7_1evrt")
+theme_override_fonts/font = ExtResource("11_xfqi3")
 text = "COGNITIVE"
 horizontal_alignment = 1
 
@@ -892,7 +883,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 125)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("11_w1l36")
+texture = ExtResource("12_8ue2m")
 expand_mode = 1
 stretch_mode = 5
 

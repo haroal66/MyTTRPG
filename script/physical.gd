@@ -8,13 +8,13 @@ extends VBoxContainer
 @export var label_healthmax: Label
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void: 
-	# Connecte les signaux "text_changed" des LineEdits sources
+func _ready() -> void: 	
 	line_edit_strength.connect("text_changed", Callable(self, "_on_line_edit_text_changed"))
 	line_edit_speed.connect("text_changed", Callable(self, "_on_line_edit_text_changed"))
+	
+	call_deferred("_update_defense_and_health")
 
-func _on_line_edit_text_changed(new_text):
-	# Récupère les valeurs des LineEdits
+func _update_defense_and_health() -> void:
 	var num_strength = line_edit_strength.text.to_int() if line_edit_strength.text.is_valid_int() else 0
 	var num_speed = line_edit_speed.text.to_int() if line_edit_speed.text.is_valid_int() else 0
 	
@@ -24,6 +24,5 @@ func _on_line_edit_text_changed(new_text):
 	label_defense.text = str(defense)
 	label_healthmax.text = "/" + str(healthmax)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_line_edit_text_changed(_new_text):
+	_update_defense_and_health()
