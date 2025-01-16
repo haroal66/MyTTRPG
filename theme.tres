@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bnxupl5pqwxf1"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bnxupl5pqwxf1"]
 
 [ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_uknj3"]
 [ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="2_ip7pf"]
 [ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="3_q3i53"]
+[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="4_hmwsb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4nch"]
 content_margin_left = 4.0
@@ -78,16 +79,22 @@ LineEdit/fonts/font = ExtResource("3_q3i53")
 LinkButton/fonts/font = ExtResource("1_uknj3")
 MenuBar/fonts/font = ExtResource("1_uknj3")
 MenuButton/fonts/font = ExtResource("1_uknj3")
+OptionButton/constants/icon_max_width = 40
+OptionButton/font_sizes/font_size = 40
 OptionButton/fonts/font = ExtResource("3_q3i53")
-PopupMenu/constants/icon_max_width = 20
+PopupMenu/constants/icon_max_width = 40
+PopupMenu/font_sizes/font_size = 40
+PopupMenu/font_sizes/title_font_size = 40
 PopupMenu/fonts/font = ExtResource("3_q3i53")
 PopupMenu/fonts/font_separator = ExtResource("1_uknj3")
 ProgressBar/fonts/font = ExtResource("1_uknj3")
-RichTextLabel/fonts/bold_font = ExtResource("1_uknj3")
-RichTextLabel/fonts/bold_italics_font = ExtResource("1_uknj3")
-RichTextLabel/fonts/italics_font = ExtResource("1_uknj3")
-RichTextLabel/fonts/mono_font = ExtResource("1_uknj3")
-RichTextLabel/fonts/normal_font = ExtResource("1_uknj3")
+RichTextLabel/font_sizes/bold_font_size = 42
+RichTextLabel/font_sizes/normal_font_size = 40
+RichTextLabel/fonts/bold_font = ExtResource("4_hmwsb")
+RichTextLabel/fonts/bold_italics_font = ExtResource("4_hmwsb")
+RichTextLabel/fonts/italics_font = ExtResource("3_q3i53")
+RichTextLabel/fonts/mono_font = ExtResource("3_q3i53")
+RichTextLabel/fonts/normal_font = ExtResource("3_q3i53")
 SpinBox/icons/updown = SubResource("ImageTexture_8656j")
 TabBar/fonts/font = ExtResource("1_uknj3")
 TabContainer/fonts/font = ExtResource("1_uknj3")

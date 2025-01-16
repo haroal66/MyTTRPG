@@ -1,31 +1,24 @@
-[gd_scene load_steps=19 format=3 uid="uid://dl3rr33ghb2be"]
+[gd_scene load_steps=18 format=3 uid="uid://dl3rr33ghb2be"]
 
 [ext_resource type="Theme" uid="uid://bnxupl5pqwxf1" path="res://theme.tres" id="1_kaugj"]
 [ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_ldj68"]
-[ext_resource type="Script" path="res://creation.gd" id="2_0i34l"]
+[ext_resource type="Script" path="res://script/creation.gd" id="2_0i34l"]
 [ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="2_hj6i5"]
 [ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="5_x6sj4"]
 [ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="6_by6v1"]
 [ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="7_mtk2g"]
-[ext_resource type="Script" path="res://script/ressources.gd" id="8_a7jr1"]
+[ext_resource type="Texture2D" uid="uid://d0yuh8iinaujm" path="res://images/eye-white.png" id="7_oqqw3"]
 [ext_resource type="Texture2D" uid="uid://dt11ygkdtbvme" path="res://images/singer-ancestry-thumbnail.webp" id="8_trocc"]
 [ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="9_xhfpe"]
-[ext_resource type="Script" path="res://script/physical.gd" id="10_h15go"]
+[ext_resource type="Script" path="res://details.gd" id="10_mtj6j"]
+[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="10_ou5ir"]
 [ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="11_xfqi3"]
-[ext_resource type="Texture2D" uid="uid://cvn1w1f18ps8x" path="res://images/Kholin_Crest_full.svg" id="12_8ue2m"]
-[ext_resource type="Script" path="res://script/cognitive.gd" id="13_rjl00"]
-[ext_resource type="Script" path="res://script/spiritual.gd" id="14_k5gyi"]
+[ext_resource type="Script" path="res://script/attributes.gd" id="13_jc7af"]
 
 [sub_resource type="Theme" id="Theme_xq6bc"]
 
-[sub_resource type="GDScript" id="GDScript_5jdr4"]
-script/source = "extends Label
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-"
+[sub_resource type="ButtonGroup" id="ButtonGroup_1o3nb"]
+allow_unpress = true
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhlq4"]
 
@@ -62,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.997187)
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer"]
+[node name="DecorativeLine" type="TextureRect" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 4
@@ -111,7 +104,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile"]
-custom_minimum_size = Vector2(30, 0)
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
 [node name="RightGrid" type="GridContainer" parent="ColorRect/VBoxContainer/Profile"]
@@ -124,12 +117,14 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/RightGrid/CharacterName"]
 layout_mode = 2
-text = "Character Name"
+text = "Name "
 uppercase = true
 
-[node name="LineEdit" type="LineEdit" parent="ColorRect/VBoxContainer/Profile/RightGrid/CharacterName"]
+[node name="Name" type="LineEdit" parent="ColorRect/VBoxContainer/Profile/RightGrid/CharacterName" groups=["Persist"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/focus = ExtResource("2_hj6i5")
 theme_override_styles/normal = ExtResource("2_hj6i5")
 
@@ -139,10 +134,10 @@ alignment = 2
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/RightGrid/Level"]
 layout_mode = 2
-text = "Level"
+text = "Level "
 uppercase = true
 
-[node name="LineEdit2" type="LineEdit" parent="ColorRect/VBoxContainer/Profile/RightGrid/Level"]
+[node name="Level" type="LineEdit" parent="ColorRect/VBoxContainer/Profile/RightGrid/Level" groups=["Persist"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
@@ -152,10 +147,6 @@ theme_override_styles/normal = ExtResource("2_hj6i5")
 text = "1"
 virtual_keyboard_type = 2
 
-[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid/Level"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-
 [node name="Paths" type="HBoxContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -164,10 +155,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 tooltip_text = "Characters gain most of their abilities from paths, reflecting their specialty, training, and experience"
 mouse_filter = 0
-text = "Paths"
+text = "Paths "
 uppercase = true
 
-[node name="OptionButton2" type="OptionButton" parent="ColorRect/VBoxContainer/Profile/RightGrid/Paths"]
+[node name="Path" type="OptionButton" parent="ColorRect/VBoxContainer/Profile/RightGrid/Paths" groups=["Persist"]]
 layout_mode = 2
 item_count = 6
 popup/item_0/text = "Agent"
@@ -182,25 +173,38 @@ popup/item_4/id = 4
 popup/item_5/text = "Soldier"
 popup/item_5/id = 5
 
+[node name="MarginContainer4" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid/Paths"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Profile/RightGrid/Paths"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1o3nb")
+icon = ExtResource("7_oqqw3")
+icon_alignment = 1
+expand_icon = true
+
 [node name="Ancestry" type="HBoxContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry"]
-custom_minimum_size = Vector2(25, 0)
-layout_mode = 2
-
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry"]
 layout_mode = 2
 tooltip_text = "Your ancestry represents the species you are descended from"
 mouse_filter = 0
-text = "Ancestry"
+text = "Ancestry "
 uppercase = true
 
-[node name="OptionButton" type="OptionButton" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry"]
+[node name="Ancestry" type="OptionButton" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry" groups=["Persist"]]
 layout_mode = 2
-expand_icon = true
 item_count = 2
 popup/item_0/text = "Human"
 popup/item_0/icon = ExtResource("7_mtk2g")
@@ -208,72 +212,610 @@ popup/item_1/text = "Singer"
 popup/item_1/icon = ExtResource("8_trocc")
 popup/item_1/id = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry"]
+[node name="MarginContainer5" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1o3nb")
+icon = ExtResource("7_oqqw3")
+icon_alignment = 1
+expand_icon = true
+
 [node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile"]
-custom_minimum_size = Vector2(30, 0)
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Ressources" type="VBoxContainer" parent="ColorRect/VBoxContainer" node_paths=PackedStringArray("label_health", "label_healthmax", "label_focus", "label_focusmax", "label_investiture", "label_investituremax")]
+[node name="Details" type="PanelContainer" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("8_a7jr1")
-label_health = NodePath("Health/HBoxContainer/Health")
-label_healthmax = NodePath("Health/HBoxContainer/Label2")
-label_focus = NodePath("HBoxContainer2/Focus/HBoxContainer3/Focus")
-label_focusmax = NodePath("HBoxContainer2/Focus/HBoxContainer3/Label2")
-label_investiture = NodePath("HBoxContainer2/Investiture/HBoxContainer4/Investiture")
-label_investituremax = NodePath("HBoxContainer2/Investiture/HBoxContainer4/Label2")
+script = ExtResource("10_mtj6j")
 
-[node name="Health" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources"]
+[node name="Path" type="ColorRect" parent="ColorRect/VBoxContainer/Details"]
+visible = false
+custom_minimum_size = Vector2(0, 1000)
 layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.873073, 0.838117, 0.741585, 1)
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/Health"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Details/Path"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Details/Path/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "HEALTH"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xfqi3")
+text = "PATH DETAIL"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/Health"]
+[node name="MarginContainer5" type="MarginContainer" parent="ColorRect/VBoxContainer/Details/Path/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Details/Path/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Details/Path/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Path" type="RichTextLabel" parent="ColorRect/VBoxContainer/Details/Path/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_ou5ir")
+bbcode_enabled = true
+text = "Artists of duplicity and sabotage, Agents grasp the threads of fate in the palms of their hands, waiting for the perfect moment to pull and unravel the carefully laid plans of others. Agents can fool even the most prudent with their clever ruses, swift movements, and calculated strikes.
+
+Formal education matters little to Agents. Most are fiercely observant and either self-taught or trained in action by their crew. Rules and regulations from outside entities are but playthings to work around or disregard altogether, and Agents answer only to their own code. They meet impossible tasks with a sly smile and razor-sharp wit, living for the thrill of cheating death yet again.
+
+[b][u]Agent Specialties[/u][/b]
+No two Agents are alike, but many share common strengths. The Agent path presents talents within three specialties:
+
+[b]Investigator.[/b] Hunches tend to be unreliable—but Investigators cultivate trustworthy instincts, learning to listen, collaborate, and pursue answers to questions others don’t think to ask.
+
+[b]Spy.[/b] To get what they need, Spies plant themselves in sticky situations, ready to deflect or ease suspicion when it inevitably sweeps their way.
+
+[b]Thief.[/b] Although a quick mind is an invaluable asset, Thieves train their bodies to keep pace. Whether out of necessity or ambition, they risk it all to swindle the insurmountable odds standing between them and their prize.
+
+You can either focus on one of these specialties or choose talents from multiple specialties.
+
+[b][u]Building an Agent[/u][/b]
+Consider these general tips for building an effective Agent:
+
+[b]Attributes.[/b] It’s usually a good idea to prioritize Awareness, Intellect, and Speed.
+
+[b]Skills.[/b] Useful skills include Agility, Deception, Deduction, Insight, Light Weapons, and Thievery.
+
+[b]Other Heroic Paths.[/b] The Hunter and Scholar paths make excellent multi-path choices.
+
+[b]Rewards.[/b] When choosing rewards, you can’t go wrong with a bodyguard companion and patrons from the criminal world or high society."
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Details/Path/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Ancestry" type="ColorRect" parent="ColorRect/VBoxContainer/Details"]
+visible = false
+custom_minimum_size = Vector2(0, 1000)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.873073, 0.838117, 0.741585, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Details/Ancestry"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Details/Ancestry/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_xfqi3")
+text = "ANCESTRY DETAIL"
+horizontal_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="ColorRect/VBoxContainer/Details/Ancestry/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Details/Ancestry/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Details/Ancestry/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Ancestry" type="RichTextLabel" parent="ColorRect/VBoxContainer/Details/Ancestry/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_ou5ir")
+bbcode_enabled = true
+text = "Artists of duplicity and sabotage, Agents grasp the threads of fate in the palms of their hands, waiting for the perfect moment to pull and unravel the carefully laid plans of others. Agents can fool even the most prudent with their clever ruses, swift movements, and calculated strikes.
+
+Formal education matters little to Agents. Most are fiercely observant and either self-taught or trained in action by their crew. Rules and regulations from outside entities are but playthings to work around or disregard altogether, and Agents answer only to their own code. They meet impossible tasks with a sly smile and razor-sharp wit, living for the thrill of cheating death yet again.
+
+[b][u]Agent Specialties[/u][/b]
+No two Agents are alike, but many share common strengths. The Agent path presents talents within three specialties:
+
+[b]Investigator.[/b] Hunches tend to be unreliable—but Investigators cultivate trustworthy instincts, learning to listen, collaborate, and pursue answers to questions others don’t think to ask.
+
+[b]Spy.[/b] To get what they need, Spies plant themselves in sticky situations, ready to deflect or ease suspicion when it inevitably sweeps their way.
+
+[b]Thief.[/b] Although a quick mind is an invaluable asset, Thieves train their bodies to keep pace. Whether out of necessity or ambition, they risk it all to swindle the insurmountable odds standing between them and their prize.
+
+You can either focus on one of these specialties or choose talents from multiple specialties.
+
+[b][u]Building an Agent[/u][/b]
+Consider these general tips for building an effective Agent:
+
+[b]Attributes.[/b] It’s usually a good idea to prioritize Awareness, Intellect, and Speed.
+
+[b]Skills.[/b] Useful skills include Agility, Deception, Deduction, Insight, Light Weapons, and Thievery.
+
+[b]Other Heroic Paths.[/b] The Hunter and Scholar paths make excellent multi-path choices.
+
+[b]Rewards.[/b] When choosing rewards, you can’t go wrong with a bodyguard companion and patrons from the criminal world or high society."
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Details/Ancestry/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Attributes" type="VBoxContainer" parent="ColorRect/VBoxContainer" node_paths=PackedStringArray("line_edit_level", "label_points_remaining")]
+layout_mode = 2
+script = ExtResource("13_jc7af")
+line_edit_level = NodePath("../Profile/RightGrid/Level/Level")
+label_points_remaining = NodePath("HBoxContainer/Label3")
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_xfqi3")
+theme_override_font_sizes/font_size = 50
+text = "ATTRIBUTES"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/Attributes"]
+layout_mode = 2
+text = "Most humans and singers have attribute scores ranging from 0 to 3, though remarkable individuals can have even higher scores.
+(0 is a valid attribute score. You can‘t put more than 3 points into any attribute at level 1. )"
+fit_content = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/HBoxContainer"]
+layout_mode = 2
+text = "Points Remaining: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Attributes/HBoxContainer"]
+layout_mode = 2
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Physical" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+color = Color(0.67, 0.619973, 0.4824, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Physical"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Physical" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "-"
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("11_xfqi3")
+text = "PHYSICAL"
+horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
-custom_minimum_size = Vector2(10, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
 
-[node name="Health" type="Label" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer" groups=["Persist"]]
+[node name="Strength" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Your physical power, toughness, and athleticism"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "10"
+text = "STRENGTH"
+horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
+[node name="Strength" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
-text = "/10"
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
+[node name="Speed" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Your quickness and dexterity"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "SPEED"
+horizontal_alignment = 1
+
+[node name="Speed" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed/VBoxContainer" groups=["Persist"]]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "+"
+
+[node name="Cognitive" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+color = Color(0.67, 0.619973, 0.4824, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Cognitive"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Cognitive" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("11_xfqi3")
+text = "COGNITIVE"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Intellect" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Intellect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Intellect/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Your physical power, toughness, and athleticism"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "INTELLECT"
+horizontal_alignment = 1
+
+[node name="Intellect" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Intellect/VBoxContainer" groups=["Persist"]]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+
+[node name="Willpower" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Your quickness and dexterity"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "WILLPOWER"
+horizontal_alignment = 1
+
+[node name="Willpower" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower/VBoxContainer" groups=["Persist"]]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Spiritual" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+color = Color(0.67, 0.619973, 0.4824, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Spiritual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Spiritual" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("11_xfqi3")
+text = "SPIRITUAL"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Awareness" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Awareness"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Awareness/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Your physical power, toughness, and athleticism"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "AWRENESS"
+horizontal_alignment = 1
+
+[node name="Awareness" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Awareness/VBoxContainer" groups=["Persist"]]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+
+[node name="Presence" type="ColorRect" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Presence"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Presence/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Your quickness and dexterity"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "PRESENCE"
+horizontal_alignment = 1
+
+[node name="Presence" type="LineEdit" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Presence/VBoxContainer" groups=["Persist"]]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
+text = "0"
+alignment = 1
+max_length = 2
+virtual_keyboard_type = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Ressources" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources"]
 layout_mode = 2
@@ -297,44 +839,51 @@ horizontal_alignment = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "-"
-
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Focus" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3" groups=["Persist"]]
+[node name="FocusMax" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "2"
-script = SubResource("GDScript_5jdr4")
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
-text = "/2"
 
 [node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "+"
-
 [node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
+[node name="Health" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Health"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "HEALTH"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Health"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Health/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="HealthMax" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Health/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "10"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Health/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -387,37 +936,18 @@ horizontal_alignment = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "-"
-
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Investiture" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4" groups=["Persist"]]
+[node name="Investiture" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "0"
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
-text = "/0"
-
 [node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
-
-[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "+"
 
 [node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
 custom_minimum_size = Vector2(20, 0)
@@ -427,534 +957,26 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Physical" type="ColorRect" parent="ColorRect/VBoxContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(0, 300)
-layout_mode = 2
-color = Color(0.67, 0.619973, 0.4824, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Physical"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
+[node name="MarginContainer4" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer"]
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-
-[node name="Physical" type="VBoxContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("line_edit_strength", "line_edit_speed", "label_defense", "label_healthmax")]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 10
-alignment = 1
-script = ExtResource("10_h15go")
-line_edit_strength = NodePath("HBoxContainer/Strength/VBoxContainer/Strength")
-line_edit_speed = NodePath("HBoxContainer/Speed/VBoxContainer/Speed")
-label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
-label_healthmax = NodePath("../../../../Ressources/Health/HBoxContainer/Label2")
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_xfqi3")
-text = "PHYSICAL"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 15
-
-[node name="Strength" type="ColorRect" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer"]
-layout_mode = 2
-tooltip_text = "Your physical power, toughness, and athleticism"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "STRENGTH"
-horizontal_alignment = 1
-
-[node name="Strength" type="LineEdit" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer" groups=["Persist"]]
-layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
-text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
-
-[node name="Defense" type="VBoxContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense"]
-layout_mode = 2
-tooltip_text = "10 + STRENGTH + SPEED"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "DEFENSE"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense"]
-custom_minimum_size = Vector2(60, 125)
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("12_8ue2m")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Defense/TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -42.1537
-offset_right = 19.0
-offset_bottom = 31.8463
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Speed" type="ColorRect" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed/VBoxContainer"]
-layout_mode = 2
-tooltip_text = "Your quickness and dexterity"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "SPEED"
-horizontal_alignment = 1
-
-[node name="Speed" type="LineEdit" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed/VBoxContainer" groups=["Persist"]]
-layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
-text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
-[node name="Cognitive" type="ColorRect" parent="ColorRect/VBoxContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(0, 300)
-layout_mode = 2
-color = Color(0.67, 0.619973, 0.4824, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Cognitive"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-
-[node name="Cognitive" type="VBoxContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("line_edit_intellect", "line_edit_willpower", "label_defense", "label_focusmax")]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 10
-alignment = 1
-script = ExtResource("13_rjl00")
-line_edit_intellect = NodePath("HBoxContainer/Intellect/VBoxContainer/Intellect")
-line_edit_willpower = NodePath("HBoxContainer/Willpower/VBoxContainer/Willpower")
-label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
-label_focusmax = NodePath("../../../../Ressources/HBoxContainer2/Focus/HBoxContainer3/Label2")
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_xfqi3")
-text = "COGNITIVE"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 15
-
-[node name="Intellect" type="ColorRect" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Intellect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Intellect/VBoxContainer"]
-layout_mode = 2
-tooltip_text = "Your physical power, toughness, and athleticism"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "INTELLECT"
-horizontal_alignment = 1
-
-[node name="Intellect" type="LineEdit" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Intellect/VBoxContainer" groups=["Persist"]]
-layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
-text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
-
-[node name="Defense" type="VBoxContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Defense"]
-layout_mode = 2
-tooltip_text = "10 + STRENGTH + SPEED"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "DEFENSE"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Defense"]
-custom_minimum_size = Vector2(60, 125)
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("12_8ue2m")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Defense/TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -42.1537
-offset_right = 19.0
-offset_bottom = 31.8463
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Willpower" type="ColorRect" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer"]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower/VBoxContainer"]
-layout_mode = 2
-tooltip_text = "Your quickness and dexterity"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "WILLPOWER"
-horizontal_alignment = 1
-
-[node name="Willpower" type="LineEdit" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower/VBoxContainer" groups=["Persist"]]
-layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
-text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
-[node name="Spiritual" type="ColorRect" parent="ColorRect/VBoxContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(0, 300)
-layout_mode = 2
-color = Color(0.67, 0.619973, 0.4824, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Spiritual"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-
-[node name="Spiritual" type="VBoxContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("line_edit_awareness", "line_edit_presence", "label_defense")]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 10
-alignment = 1
-script = ExtResource("14_k5gyi")
-line_edit_awareness = NodePath("HBoxContainer/Awareness/VBoxContainer/Awareness")
-line_edit_presence = NodePath("HBoxContainer/Presence/VBoxContainer/Presence")
-label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_xfqi3")
-text = "COGNITIVE"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 15
-
-[node name="Awareness" type="ColorRect" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Awareness"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Awareness/VBoxContainer"]
-layout_mode = 2
-tooltip_text = "Your physical power, toughness, and athleticism"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "INTELLECT"
-horizontal_alignment = 1
-
-[node name="Awareness" type="LineEdit" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Awareness/VBoxContainer" groups=["Persist"]]
-layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
-text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
-
-[node name="Defense" type="VBoxContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Defense"]
-layout_mode = 2
-tooltip_text = "10 + STRENGTH + SPEED"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "DEFENSE"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Defense"]
-custom_minimum_size = Vector2(60, 125)
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("12_8ue2m")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Defense/TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -42.1537
-offset_right = 19.0
-offset_bottom = 31.8463
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Presence" type="ColorRect" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer"]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Presence"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Presence/VBoxContainer"]
-layout_mode = 2
-tooltip_text = "Your quickness and dexterity"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "WILLPOWER"
-horizontal_alignment = 1
-
-[node name="Presence" type="LineEdit" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Presence/VBoxContainer" groups=["Persist"]]
-layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
-text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
+size_flags_horizontal = 4
+text = "CREATE"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer/Button" to="ColorRect/VBoxContainer/Ressources" method="_on_minus_health_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer/Button2" to="ColorRect/VBoxContainer/Ressources" method="_on_plus_health_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3/Button" to="ColorRect/VBoxContainer/Ressources" method="_on_focus_minus_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3/Button2" to="ColorRect/VBoxContainer/Ressources" method="_on_focus_plus_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4/Button" to="ColorRect/VBoxContainer/Ressources" method="_on_minus_investiture_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4/Button2" to="ColorRect/VBoxContainer/Ressources" method="_on_plus_investiture_pressed"]
+[connection signal="text_submitted" from="ColorRect/VBoxContainer/Profile/RightGrid/Level/Level" to="ColorRect/VBoxContainer/Attributes" method="_on_level_text_submitted"]
+[connection signal="item_selected" from="ColorRect/VBoxContainer/Profile/RightGrid/Paths/Path" to="ColorRect/VBoxContainer/Details" method="_on_path_item_selected"]
+[connection signal="toggled" from="ColorRect/VBoxContainer/Profile/RightGrid/Paths/Button" to="ColorRect/VBoxContainer/Details" method="_on_details_path_toggled"]
+[connection signal="item_selected" from="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry/Ancestry" to="ColorRect/VBoxContainer/Details" method="_on_ancestry_item_selected"]
+[connection signal="toggled" from="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry/Button2" to="ColorRect/VBoxContainer/Details" method="_on_details_ancestry_toggled"]
+[connection signal="text_submitted" from="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer/Strength" to="ColorRect/VBoxContainer/Attributes" method="_on_strength_text_submitted"]
+[connection signal="text_submitted" from="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed/VBoxContainer/Speed" to="ColorRect/VBoxContainer/Attributes" method="_on_speed_text_submitted"]
+[connection signal="text_submitted" from="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Intellect/VBoxContainer/Intellect" to="ColorRect/VBoxContainer/Attributes" method="_on_intellect_text_submitted"]
+[connection signal="text_submitted" from="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower/VBoxContainer/Willpower" to="ColorRect/VBoxContainer/Attributes" method="_on_willpower_text_submitted"]
+[connection signal="text_submitted" from="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Awareness/VBoxContainer/Awareness" to="ColorRect/VBoxContainer/Attributes" method="_on_awareness_text_submitted"]
+[connection signal="text_submitted" from="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Presence/VBoxContainer/Presence" to="ColorRect/VBoxContainer/Attributes" method="_on_presence_text_submitted"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_create_pressed"]

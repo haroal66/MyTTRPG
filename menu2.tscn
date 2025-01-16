@@ -213,17 +213,38 @@ expand_mode = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Profile"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer"]
+[node name="Name" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer" groups=["Persist"]]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vejn1")
 theme_override_font_sizes/font_size = 50
 text = "Dalinar Kholin"
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Profile/VBoxContainer"]
+layout_mode = 2
+
+[node name="Ancestry" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vejn1")
 theme_override_font_sizes/font_size = 40
-text = "Human Soldier Level 1"
+text = "Human"
+
+[node name="Path" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vejn1")
+theme_override_font_sizes/font_size = 40
+text = "Soldier"
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vejn1")
+theme_override_font_sizes/font_size = 40
+text = "Level"
+
+[node name="Level" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vejn1")
+theme_override_font_sizes/font_size = 40
+text = "1"
 
 [node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)

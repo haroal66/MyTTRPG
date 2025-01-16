@@ -1,6 +1,8 @@
 extends Control
 
+const utils = preload("res://script/utils.gd")
 const SAVE_FILE_PATH = "user://save.txt"
+
 var previous_data = {}
 
 # Called when the node enters the scene tree for the first time.
@@ -25,21 +27,11 @@ func _save_text() -> void:
 	previous_data = data
 
 func _load_text() -> void:
-	if not FileAccess.file_exists(SAVE_FILE_PATH):
+	var node_data = utils.load_json_from_path(SAVE_FILE_PATH)
+	if node_data == {}:
 		return
 	
-	var save_file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
-	var json_string = save_file.get_line()
-	save_file.close()
-	
-	var json = JSON.new()
-	var parse_result = json.parse(json_string)
-	if not parse_result == OK:
-		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
-
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
-	
-	var node_data = json.data
 	for node in save_nodes:
 		if (node is LineEdit or node is Label) and node.name in node_data:
 			node.text = node_data[node.name]

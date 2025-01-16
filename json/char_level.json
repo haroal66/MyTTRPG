@@ -1,0 +1,170 @@
+{
+	"1": {
+		"attribute_points": 12,
+		"health_gained": "10 + STR",
+		"skill_ranks": "4 (+1 from starting path)",
+		"talents_gained": 1,
+		"ancestry_bonus_talent": 1,
+		"max_skill_rank": 2
+	},
+	"2": {
+		"attribute_points": 12,
+		"health_gained": 5,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"max_skill_rank": 2
+	},
+	"3": {
+		"attribute_points": 13,
+		"health_gained": 5,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 1,
+		"max_skill_rank": 2
+	},
+	"4": {
+		"attribute_points": 13,
+		"health_gained": 5,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 1,
+		"max_skill_rank": 2
+	},
+	"5": {
+		"attribute_points": 13,
+		"health_gained": 5,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 1,
+		"max_skill_rank": 2
+	},
+	"6": {
+		"attribute_points": 14,
+		"health_gained": "4 + STR",
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"ancestry_bonus_talent": 1,
+		"max_skill_rank": 3
+	},
+	"7": {
+		"attribute_points": 14,
+		"health_gained": 4,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 2,
+		"max_skill_rank": 3
+	},
+	"8": {
+		"attribute_points": 14,
+		"health_gained": 4,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 2,
+		"max_skill_rank": 3
+	},
+	"9": {
+		"attribute_points": 15,
+		"health_gained": 4,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 2,
+		"max_skill_rank": 3
+	},
+	"10": {
+		"attribute_points": 15,
+		"health_gained": 4,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 2,
+		"max_skill_rank": 3
+	},
+	"11": {
+		"attribute_points": 15,
+		"health_gained": "3 + STR",
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"ancestry_bonus_talent": 1,
+		"tier": 3,
+		"max_skill_rank": 4
+	},
+	"12": {
+		"attribute_points": 16,
+		"health_gained": 3,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 3,
+		"max_skill_rank": 4
+	},
+	"13": {
+		"attribute_points": 16,
+		"health_gained": 3,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 3,
+		"max_skill_rank": 4
+	},
+	"14": {
+		"attribute_points": 16,
+		"health_gained": 3,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 3,
+		"max_skill_rank": 4
+	},
+	"15": {
+		"attribute_points": 17,
+		"health_gained": 3,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 3,
+		"max_skill_rank": 4
+	},
+	"16": {
+		"attribute_points": 17,
+		"health_gained": "2 + STR",
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"ancestry_bonus_talent": 1,
+		"tier": 4,
+		"max_skill_rank": 5
+	},
+	"17": {
+		"attribute_points": 17,
+		"health_gained": 2,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 4,
+		"max_skill_rank": 5
+	},
+	"18": {
+		"attribute_points": 18,
+		"health_gained": 2,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 4,
+		"max_skill_rank": 5
+	},
+	"19": {
+		"attribute_points": 18,
+		"health_gained": 2,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 4,
+		"max_skill_rank": 5
+	},
+	"20": {
+		"attribute_points": 18,
+		"health_gained": 2,
+		"skill_ranks": 2,
+		"talents_gained": 1,
+		"tier": 4,
+		"max_skill_rank": 5
+	},
+	"21": {
+		"attribute_points": 18,
+		"health_gained": 1,
+		"skill_ranks_or_talents_gained": "Either +1 skill rank or +1 talent",
+		"tier": 5,
+		"max_skill_rank": 5
+	}
+}
