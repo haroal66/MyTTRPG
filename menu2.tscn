@@ -221,6 +221,7 @@ text = "Dalinar Kholin"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Profile/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Ancestry" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
 layout_mode = 2
@@ -228,13 +229,13 @@ theme_override_fonts/font = ExtResource("2_vejn1")
 theme_override_font_sizes/font_size = 40
 text = "Human"
 
-[node name="Path" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer"]
+[node name="Path" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vejn1")
 theme_override_font_sizes/font_size = 40
 text = "Soldier"
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vejn1")
 theme_override_font_sizes/font_size = 40

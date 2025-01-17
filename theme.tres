@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bnxupl5pqwxf1"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bnxupl5pqwxf1"]
 
 [ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_uknj3"]
 [ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="2_ip7pf"]
@@ -30,6 +30,8 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlbbs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_im1na"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_8656j"]
 
@@ -95,6 +97,7 @@ RichTextLabel/fonts/bold_italics_font = ExtResource("4_hmwsb")
 RichTextLabel/fonts/italics_font = ExtResource("3_q3i53")
 RichTextLabel/fonts/mono_font = ExtResource("3_q3i53")
 RichTextLabel/fonts/normal_font = ExtResource("3_q3i53")
+RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_im1na")
 SpinBox/icons/updown = SubResource("ImageTexture_8656j")
 TabBar/fonts/font = ExtResource("1_uknj3")
 TabContainer/fonts/font = ExtResource("1_uknj3")
