@@ -251,7 +251,7 @@ text = "1"
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Ressources" type="VBoxContainer" parent="ColorRect/VBoxContainer" node_paths=PackedStringArray("label_health", "label_healthmax", "label_focus", "label_focusmax", "label_investiture", "label_investituremax")]
+[node name="Ressources" type="VBoxContainer" parent="ColorRect/VBoxContainer" node_paths=PackedStringArray("label_health", "label_healthmax", "label_focus", "label_focusmax", "label_investiture", "label_investituremax") groups=["Persist"]]
 layout_mode = 2
 script = ExtResource("7_hjhg8")
 label_health = NodePath("Health/HBoxContainer/Health")
@@ -260,6 +260,7 @@ label_focus = NodePath("HBoxContainer2/Focus/HBoxContainer3/Focus")
 label_focusmax = NodePath("HBoxContainer2/Focus/HBoxContainer3/Label2")
 label_investiture = NodePath("HBoxContainer2/Investiture/HBoxContainer4/Investiture")
 label_investituremax = NodePath("HBoxContainer2/Investiture/HBoxContainer4/Label2")
+metadata/IsInit = false
 
 [node name="Health" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources"]
 layout_mode = 2
@@ -989,3 +990,9 @@ layout_mode = 2
 [connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3/Button2" to="ColorRect/VBoxContainer/Ressources" method="_on_focus_plus_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4/Button" to="ColorRect/VBoxContainer/Ressources" method="_on_minus_investiture_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4/Button2" to="ColorRect/VBoxContainer/Ressources" method="_on_plus_investiture_pressed"]
+[connection signal="text_changed" from="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer/Strength" to="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical" method="_on_strength_text_changed"]
+[connection signal="text_changed" from="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed/VBoxContainer/Speed" to="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical" method="_on_speed_text_changed"]
+[connection signal="text_changed" from="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Intellect/VBoxContainer/Intellect" to="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive" method="_on_intellect_text_changed"]
+[connection signal="text_changed" from="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower/VBoxContainer/Willpower" to="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive" method="_on_willpower_text_changed"]
+[connection signal="text_changed" from="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Awareness/VBoxContainer/Awareness" to="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual" method="_on_awareness_text_changed"]
+[connection signal="text_changed" from="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Presence/VBoxContainer/Presence" to="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual" method="_on_presence_text_changed"]

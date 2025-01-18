@@ -11,7 +11,10 @@ func _ready() -> void:
 	
 	call_deferred("update_defense")
 
-func _on_line_edit_text_changed(_new_text):
+func _on_awareness_text_changed(_new_text: String) -> void:
+	update_defense()
+
+func _on_presence_text_changed(_new_text: String) -> void:
 	update_defense()
 
 func update_defense()-> void:

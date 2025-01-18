@@ -7,14 +7,14 @@ extends VBoxContainer
 @export var label_focusmax: Label
 
 func _ready() -> void: 
-	line_edit_intellect.connect("text_changed", Callable(self, "_on_line_edit_text_changed"))
-	line_edit_willpower.connect("text_changed", Callable(self, "_on_line_edit_text_changed"))
-	
 	call_deferred("update_defense_and_focus")
 
-func _on_line_edit_text_changed(_new_text):
+func _on_intellect_text_changed(_new_text: String) -> void:
 	update_defense_and_focus()
 
+func _on_willpower_text_changed(_new_text: String) -> void:
+	update_defense_and_focus()
+	
 func update_defense_and_focus()-> void:
 	var num_intellect = line_edit_intellect.text.to_int() if line_edit_intellect.text.is_valid_int() else 0
 	var num_willpower = line_edit_willpower.text.to_int() if line_edit_willpower.text.is_valid_int() else 0

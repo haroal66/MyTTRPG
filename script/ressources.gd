@@ -36,3 +36,14 @@ func button_plus(currentLabel : Label, maxLabel : Label) -> void:
 func button_minus(currentLabel : Label) -> void:
 	var newValue = currentLabel.text.to_int() - 1 if currentLabel.text.is_valid_int() else 0
 	currentLabel.text = str(newValue if newValue >= 0 else 0)
+
+# Called only when character sheet is first created
+func init() -> void:
+	var healthmax_text = label_healthmax.text.replace("/","")
+	label_health.text = healthmax_text
+	
+	var focusmax_text = label_focusmax.text.replace("/","")
+	label_focus.text = focusmax_text
+	
+	var investituremax_text = label_investituremax.text.replace("/","")
+	label_investiture.text = investituremax_text

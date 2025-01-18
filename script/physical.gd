@@ -6,15 +6,13 @@ extends VBoxContainer
 @export var label_defense: Label
 @export var label_healthmax: Label
 
-#T0DO : change connect and callable with signals (also in other 2 scripts)
-
 func _ready() -> void: 	
-	line_edit_strength.connect("text_changed", Callable(self, "_on_line_edit_text_changed"))
-	line_edit_speed.connect("text_changed", Callable(self, "_on_line_edit_text_changed"))
-	
 	call_deferred("update_defense_and_health")
 
-func _on_line_edit_text_changed(_new_text):
+func _on_strength_text_changed(_new_text: String) -> void:
+	update_defense_and_health()
+
+func _on_speed_text_changed(_new_text: String) -> void:
 	update_defense_and_health()
 
 func update_defense_and_health() -> void:
