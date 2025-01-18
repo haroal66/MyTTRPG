@@ -4,12 +4,9 @@ const utils = preload("res://script/utils.gd")
 const SAVE_FILE_PATH = "user://save.txt"
 
 var previous_data = {}
-var need_init_nodes = []
 
 func _ready() -> void:
 	load_text()
-	
-	call_deferred("init_nodes")
 
 func _on_timer_timeout() -> void:
 	save_text()
@@ -38,15 +35,5 @@ func load_text() -> void:
 	
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
 	for node in save_nodes:
-		var needInit = node.has_meta("IsInit")
 		if (node is LineEdit or node is Label) and node.name in node_data:
 			node.text = node_data[node.name]
-			if needInit:
-				node.set_meta("IsInit", true)
-		elif needInit:
-			need_init_nodes.append(node)
-			
-func init_nodes() -> void:
-	for node in need_init_nodes:
-		node.init()
-		node.set_meta("IsInit", true)

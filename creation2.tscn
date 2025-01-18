@@ -28,7 +28,7 @@ bg_color = Color(0.873073, 0.838117, 0.741585, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhlq4"]
 
-[node name="Creation" type="Control"]
+[node name="Creation" type="Control" node_paths=PackedStringArray("line_edit_level", "line_edit_strength", "line_edit_willpower")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,6 +39,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_kaugj")
 script = ExtResource("2_0i34l")
+line_edit_level = NodePath("ColorRect/VBoxContainer/Profile/RightGrid/Level/Level")
+line_edit_strength = NodePath("ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer/Strength")
+line_edit_willpower = NodePath("ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower/VBoxContainer/Willpower")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

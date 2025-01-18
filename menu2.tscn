@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ctluggi7woql1"]
+[gd_scene load_steps=19 format=3 uid="uid://ctluggi7woql1"]
 
 [ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_qcvu1"]
 [ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="2_vejn1"]
@@ -6,14 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="3_ah5fo"]
 [ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="4_5spa8"]
 [ext_resource type="Script" path="res://script/save.gd" id="4_i4oij"]
-[ext_resource type="Script" path="res://script/physical.gd" id="6_mtwda"]
+[ext_resource type="Script" path="res://script/defense.gd" id="6_mtwda"]
 [ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="6_wkcly"]
 [ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="7_1evrt"]
 [ext_resource type="Script" path="res://script/ressources.gd" id="7_hjhg8"]
 [ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="8_4nc5n"]
 [ext_resource type="Texture2D" uid="uid://cvn1w1f18ps8x" path="res://images/Kholin_Crest_full.svg" id="11_w1l36"]
-[ext_resource type="Script" path="res://script/cognitive.gd" id="12_kljaa"]
-[ext_resource type="Script" path="res://script/spiritual.gd" id="13_w55re"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4nch"]
 content_margin_left = 4.0
@@ -108,17 +106,6 @@ Tree/fonts/title_button_font = ExtResource("1_qcvu1")
 Window/fonts/title_font = ExtResource("1_qcvu1")
 
 [sub_resource type="Theme" id="Theme_xq6bc"]
-
-[sub_resource type="GDScript" id="GDScript_5jdr4"]
-script/source = "extends Label
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-"
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhlq4"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -255,12 +242,11 @@ layout_mode = 2
 layout_mode = 2
 script = ExtResource("7_hjhg8")
 label_health = NodePath("Health/HBoxContainer/Health")
-label_healthmax = NodePath("Health/HBoxContainer/Label2")
+label_healthmax = NodePath("Health/HBoxContainer/HealthMax")
 label_focus = NodePath("HBoxContainer2/Focus/HBoxContainer3/Focus")
-label_focusmax = NodePath("HBoxContainer2/Focus/HBoxContainer3/Label2")
+label_focusmax = NodePath("HBoxContainer2/Focus/HBoxContainer3/FocusMax")
 label_investiture = NodePath("HBoxContainer2/Investiture/HBoxContainer4/Investiture")
-label_investituremax = NodePath("HBoxContainer2/Investiture/HBoxContainer4/Label2")
-metadata/IsInit = false
+label_investituremax = NodePath("HBoxContainer2/Investiture/HBoxContainer4/InvestitureMax")
 
 [node name="Health" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources"]
 layout_mode = 2
@@ -291,7 +277,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "10"
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer"]
+[node name="HealthMax" type="Label" parent="ColorRect/VBoxContainer/Ressources/Health/HBoxContainer" groups=["Persist"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
 text = "/10"
@@ -344,9 +330,8 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "2"
-script = SubResource("GDScript_5jdr4")
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
+[node name="FocusMax" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3" groups=["Persist"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
 text = "/2"
@@ -435,7 +420,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "0"
 
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
+[node name="InvestitureMax" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4" groups=["Persist"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.686275, 0.545098, 0.160784, 1)
 text = "/0"
@@ -486,16 +471,15 @@ theme_override_constants/separation = 10
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Physical" type="VBoxContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("line_edit_strength", "line_edit_speed", "label_defense", "label_healthmax")]
+[node name="Physical" type="VBoxContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("label_attribute1", "label_attribute2", "label_defense")]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 1
 script = ExtResource("6_mtwda")
-line_edit_strength = NodePath("HBoxContainer/Strength/VBoxContainer/Strength")
-line_edit_speed = NodePath("HBoxContainer/Speed/VBoxContainer/Speed")
+label_attribute1 = NodePath("HBoxContainer/Strength/VBoxContainer/Strength")
+label_attribute2 = NodePath("HBoxContainer/Speed/VBoxContainer/Speed")
 label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
-label_healthmax = NodePath("../../../../Ressources/Health/HBoxContainer/Label2")
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical"]
 layout_mode = 2
@@ -534,19 +518,13 @@ theme_override_font_sizes/font_size = 50
 text = "STRENGTH"
 horizontal_alignment = 1
 
-[node name="Strength" type="LineEdit" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer" groups=["Persist"]]
+[node name="Strength" type="Label" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
 text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Defense" type="VBoxContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer"]
 layout_mode = 2
@@ -612,19 +590,13 @@ theme_override_font_sizes/font_size = 50
 text = "SPEED"
 horizontal_alignment = 1
 
-[node name="Speed" type="LineEdit" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed/VBoxContainer" groups=["Persist"]]
+[node name="Speed" type="Label" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed/VBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
 text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(10, 0)
@@ -661,16 +633,15 @@ theme_override_constants/separation = 10
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Cognitive" type="VBoxContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("line_edit_intellect", "line_edit_willpower", "label_defense", "label_focusmax")]
+[node name="Cognitive" type="VBoxContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("label_attribute1", "label_attribute2", "label_defense")]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 1
-script = ExtResource("12_kljaa")
-line_edit_intellect = NodePath("HBoxContainer/Intellect/VBoxContainer/Intellect")
-line_edit_willpower = NodePath("HBoxContainer/Willpower/VBoxContainer/Willpower")
+script = ExtResource("6_mtwda")
+label_attribute1 = NodePath("HBoxContainer/Intellect/VBoxContainer/Intellect")
+label_attribute2 = NodePath("HBoxContainer/Willpower/VBoxContainer/Willpower")
 label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
-label_focusmax = NodePath("../../../../Ressources/HBoxContainer2/Focus/HBoxContainer3/Label2")
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive"]
 layout_mode = 2
@@ -709,19 +680,13 @@ theme_override_font_sizes/font_size = 50
 text = "INTELLECT"
 horizontal_alignment = 1
 
-[node name="Intellect" type="LineEdit" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Intellect/VBoxContainer" groups=["Persist"]]
+[node name="Intellect" type="Label" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Intellect/VBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
 text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Defense" type="VBoxContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer"]
 layout_mode = 2
@@ -787,19 +752,13 @@ theme_override_font_sizes/font_size = 50
 text = "WILLPOWER"
 horizontal_alignment = 1
 
-[node name="Willpower" type="LineEdit" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower/VBoxContainer" groups=["Persist"]]
+[node name="Willpower" type="Label" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower/VBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
 text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(10, 0)
@@ -836,21 +795,21 @@ theme_override_constants/separation = 10
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Spiritual" type="VBoxContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("line_edit_awareness", "line_edit_presence", "label_defense")]
+[node name="Spiritual" type="VBoxContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2" node_paths=PackedStringArray("label_attribute1", "label_attribute2", "label_defense")]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 1
-script = ExtResource("13_w55re")
-line_edit_awareness = NodePath("HBoxContainer/Awareness/VBoxContainer/Awareness")
-line_edit_presence = NodePath("HBoxContainer/Presence/VBoxContainer/Presence")
+script = ExtResource("6_mtwda")
+label_attribute1 = NodePath("HBoxContainer/Awareness/VBoxContainer/Awareness")
+label_attribute2 = NodePath("HBoxContainer/Presence/VBoxContainer/Presence")
 label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("7_1evrt")
-text = "COGNITIVE"
+text = "SPIRITUAL"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual"]
@@ -880,22 +839,16 @@ tooltip_text = "Your physical power, toughness, and athleticism"
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "INTELLECT"
+text = "AWARENESS"
 horizontal_alignment = 1
 
-[node name="Awareness" type="LineEdit" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Awareness/VBoxContainer" groups=["Persist"]]
+[node name="Awareness" type="Label" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Awareness/VBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
 text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Defense" type="VBoxContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer"]
 layout_mode = 2
@@ -958,22 +911,16 @@ tooltip_text = "Your quickness and dexterity"
 mouse_filter = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "WILLPOWER"
+text = "PRESENCE"
 horizontal_alignment = 1
 
-[node name="Presence" type="LineEdit" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Presence/VBoxContainer" groups=["Persist"]]
+[node name="Presence" type="Label" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Presence/VBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yhlq4")
 text = "0"
-alignment = 1
-max_length = 2
-virtual_keyboard_type = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(10, 0)
@@ -990,9 +937,3 @@ layout_mode = 2
 [connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3/Button2" to="ColorRect/VBoxContainer/Ressources" method="_on_focus_plus_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4/Button" to="ColorRect/VBoxContainer/Ressources" method="_on_minus_investiture_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4/Button2" to="ColorRect/VBoxContainer/Ressources" method="_on_plus_investiture_pressed"]
-[connection signal="text_changed" from="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer/Strength" to="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical" method="_on_strength_text_changed"]
-[connection signal="text_changed" from="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Speed/VBoxContainer/Speed" to="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical" method="_on_speed_text_changed"]
-[connection signal="text_changed" from="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Intellect/VBoxContainer/Intellect" to="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive" method="_on_intellect_text_changed"]
-[connection signal="text_changed" from="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower/VBoxContainer/Willpower" to="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive" method="_on_willpower_text_changed"]
-[connection signal="text_changed" from="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Awareness/VBoxContainer/Awareness" to="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual" method="_on_awareness_text_changed"]
-[connection signal="text_changed" from="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual/HBoxContainer/Presence/VBoxContainer/Presence" to="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual" method="_on_presence_text_changed"]

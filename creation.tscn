@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="3_r24s8"]
 [ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="4_qxlhi"]
 [ext_resource type="Texture2D" uid="uid://dt11ygkdtbvme" path="res://images/singer-ancestry-thumbnail.webp" id="5_syj5e"]
-[ext_resource type="Script" path="res://script/physical.gd" id="6_xbj6n"]
+[ext_resource type="Script" path="res://script/defense.gd" id="6_xbj6n"]
 [ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="7_6jgk1"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_8656j"]
