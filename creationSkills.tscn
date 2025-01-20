@@ -1,0 +1,1213 @@
+[gd_scene load_steps=13 format=3 uid="uid://dy82ea31j1a61"]
+
+[ext_resource type="Theme" uid="uid://bnxupl5pqwxf1" path="res://theme.tres" id="1_ahk3r"]
+[ext_resource type="Script" path="res://script/save.gd" id="2_x8t42"]
+[ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="3_wq87w"]
+[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="4_yolmx"]
+[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="5_g31hs"]
+[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="8_t2kdq"]
+[ext_resource type="Script" path="res://script/details.gd" id="10_40nwm"]
+[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="11_0wjnt"]
+[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="12_ciwjv"]
+[ext_resource type="Script" path="res://skills.gd" id="12_o77gr"]
+[ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="14_ebug2"]
+
+[sub_resource type="Theme" id="Theme_xq6bc"]
+
+[node name="Creation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_ahk3r")
+script = ExtResource("2_x8t42")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.0941176, 0.188235, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.997187)
+
+[node name="DecorativeLine" type="TextureRect" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_wq87w")
+expand_mode = 5
+
+[node name="Title" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="ColorRect/VBoxContainer/Title"]
+custom_minimum_size = Vector2(50, 115)
+layout_mode = 2
+texture = ExtResource("4_yolmx")
+expand_mode = 3
+
+[node name="Title text" type="VBoxContainer" parent="ColorRect/VBoxContainer/Title"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Title/Title text"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_g31hs")
+theme_override_font_sizes/font_size = 100
+text = "STORMLIGHT"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Title/Title text"]
+layout_mode = 2
+theme = SubResource("Theme_xq6bc")
+theme_override_fonts/font = ExtResource("5_g31hs")
+theme_override_font_sizes/font_size = 40
+text = "ROLEPLAYING GAME"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Profile" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Profile"]
+layout_mode = 2
+texture = ExtResource("8_t2kdq")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Profile"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer" groups=["Persist"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_font_sizes/font_size = 50
+text = "Dalinar Kholin"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Profile/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Ancestry" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_font_sizes/font_size = 40
+text = "Human"
+
+[node name="Path" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_font_sizes/font_size = 40
+text = "Soldier"
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_font_sizes/font_size = 40
+text = "Level"
+
+[node name="Level" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_font_sizes/font_size = 40
+text = "1"
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Container" type="Control" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("10_40nwm")
+
+[node name="Path" type="ColorRect" parent="ColorRect/VBoxContainer/Container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.873073, 0.838117, 0.741585, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Container/Path"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Container/Path/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_0wjnt")
+text = "PATH DETAIL"
+horizontal_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="ColorRect/VBoxContainer/Container/Path/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Container/Path/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Container/Path/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Path" type="RichTextLabel" parent="ColorRect/VBoxContainer/Container/Path/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("12_ciwjv")
+bbcode_enabled = true
+text = "Artists of duplicity and sabotage, Agents grasp the threads of fate in the palms of their hands, waiting for the perfect moment to pull and unravel the carefully laid plans of others. Agents can fool even the most prudent with their clever ruses, swift movements, and calculated strikes.
+
+Formal education matters little to Agents. Most are fiercely observant and either self-taught or trained in action by their crew. Rules and regulations from outside entities are but playthings to work around or disregard altogether, and Agents answer only to their own code. They meet impossible tasks with a sly smile and razor-sharp wit, living for the thrill of cheating death yet again.
+
+[b][u]Agent Specialties[/u][/b]
+No two Agents are alike, but many share common strengths. The Agent path presents talents within three specialties:
+
+[b]Investigator.[/b] Hunches tend to be unreliable—but Investigators cultivate trustworthy instincts, learning to listen, collaborate, and pursue answers to questions others don’t think to ask.
+
+[b]Spy.[/b] To get what they need, Spies plant themselves in sticky situations, ready to deflect or ease suspicion when it inevitably sweeps their way.
+
+[b]Thief.[/b] Although a quick mind is an invaluable asset, Thieves train their bodies to keep pace. Whether out of necessity or ambition, they risk it all to swindle the insurmountable odds standing between them and their prize.
+
+You can either focus on one of these specialties or choose talents from multiple specialties.
+
+[b][u]Building an Agent[/u][/b]
+Consider these general tips for building an effective Agent:
+
+[b]Attributes.[/b] It’s usually a good idea to prioritize Awareness, Intellect, and Speed.
+
+[b]Skills.[/b] Useful skills include Agility, Deception, Deduction, Insight, Light Weapons, and Thievery.
+
+[b]Other Heroic Paths.[/b] The Hunter and Scholar paths make excellent multi-path choices.
+
+[b]Rewards.[/b] When choosing rewards, you can’t go wrong with a bodyguard companion and patrons from the criminal world or high society."
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Container/Path/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Ancestry" type="ColorRect" parent="ColorRect/VBoxContainer/Container"]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.873073, 0.838117, 0.741585, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Container/Ancestry"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Container/Ancestry/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_0wjnt")
+text = "ANCESTRY DETAIL"
+horizontal_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="ColorRect/VBoxContainer/Container/Ancestry/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Container/Ancestry/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Container/Ancestry/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Ancestry" type="RichTextLabel" parent="ColorRect/VBoxContainer/Container/Ancestry/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("12_ciwjv")
+bbcode_enabled = true
+text = "Artists of duplicity and sabotage, Agents grasp the threads of fate in the palms of their hands, waiting for the perfect moment to pull and unravel the carefully laid plans of others. Agents can fool even the most prudent with their clever ruses, swift movements, and calculated strikes.
+
+Formal education matters little to Agents. Most are fiercely observant and either self-taught or trained in action by their crew. Rules and regulations from outside entities are but playthings to work around or disregard altogether, and Agents answer only to their own code. They meet impossible tasks with a sly smile and razor-sharp wit, living for the thrill of cheating death yet again.
+
+[b][u]Agent Specialties[/u][/b]
+No two Agents are alike, but many share common strengths. The Agent path presents talents within three specialties:
+
+[b]Investigator.[/b] Hunches tend to be unreliable—but Investigators cultivate trustworthy instincts, learning to listen, collaborate, and pursue answers to questions others don’t think to ask.
+
+[b]Spy.[/b] To get what they need, Spies plant themselves in sticky situations, ready to deflect or ease suspicion when it inevitably sweeps their way.
+
+[b]Thief.[/b] Although a quick mind is an invaluable asset, Thieves train their bodies to keep pace. Whether out of necessity or ambition, they risk it all to swindle the insurmountable odds standing between them and their prize.
+
+You can either focus on one of these specialties or choose talents from multiple specialties.
+
+[b][u]Building an Agent[/u][/b]
+Consider these general tips for building an effective Agent:
+
+[b]Attributes.[/b] It’s usually a good idea to prioritize Awareness, Intellect, and Speed.
+
+[b]Skills.[/b] Useful skills include Agility, Deception, Deduction, Insight, Light Weapons, and Thievery.
+
+[b]Other Heroic Paths.[/b] The Hunter and Scholar paths make excellent multi-path choices.
+
+[b]Rewards.[/b] When choosing rewards, you can’t go wrong with a bodyguard companion and patrons from the criminal world or high society."
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Container/Ancestry/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Skills" type="VBoxContainer" parent="ColorRect/VBoxContainer" node_paths=PackedStringArray("label_level", "label_points_remaining", "rich_text_points_max")]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("12_o77gr")
+label_level = NodePath("../Profile/VBoxContainer/HBoxContainer/Level")
+label_points_remaining = NodePath("HBoxContainer/Label3")
+rich_text_points_max = NodePath("RichTextLabel")
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_0wjnt")
+theme_override_font_sizes/font_size = 50
+text = "SKILLS"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/Skills"]
+layout_mode = 2
+text = "You can‘t put more than %i points into any skill at your level"
+fit_content = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/HBoxContainer"]
+layout_mode = 2
+text = "Points Remaining: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Skills/HBoxContainer"]
+layout_mode = 2
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Physical" type="ColorRect" parent="ColorRect/VBoxContainer/Skills"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.67, 0.619973, 0.4824, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("11_0wjnt")
+text = "PHYSICAL"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+columns = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Athletics"
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Strength (0)"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Strength (0)"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Athletics"
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Strength (0)"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Strength (0)"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Athletics"
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Strength (0)"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Strength (0)"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Light Weapons"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Athletics"
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Strength (0)"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Strength (0)"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Thievery"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Cognitive" type="ColorRect" parent="ColorRect/VBoxContainer/Skills"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.67, 0.619973, 0.4824, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("11_0wjnt")
+text = "COGNITIVE"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+columns = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Athletics"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Agility"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Heavy Weapons"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Light Weapons"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Stealth"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Thievery"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Spiritual" type="ColorRect" parent="ColorRect/VBoxContainer/Skills"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.67, 0.619973, 0.4824, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("11_0wjnt")
+text = "SPIRITUAL"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+columns = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Athletics"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Agility"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Heavy Weapons"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Light Weapons"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Stealth"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ciwjv")
+text = "Thievery"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Ressources" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Focus" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "FOCUS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="FocusMax" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "2"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Focus/HBoxContainer3"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Health" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Health"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "HEALTH"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Health"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Health/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="HealthMax" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Health/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "10"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Health/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/CenterContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.716991, 0.606648, 0.28986, 1)
+theme_override_font_sizes/font_size = 30
+text = "DEFLECT"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/CenterContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.716991, 0.606648, 0.28986, 1)
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/CenterContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/CenterContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("14_ebug2")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Investiture" type="VBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "INVESTITURE"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Investiture" type="Label" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2/Investiture/HBoxContainer4"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Ressources"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "SET TALENTS"
+
+[node name="MarginContainer5" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_create_pressed"]

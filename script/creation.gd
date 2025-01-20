@@ -30,7 +30,7 @@ func _on_create_pressed() -> void:
 	call_deferred("change_scene")
 
 func change_scene():
-	get_tree().change_scene_to_file("res://menu2.tscn")
+	get_tree().change_scene_to_file("res://creationSkills.tscn")
 
 func init_ressources(data: Dictionary) -> Dictionary:
 	var level_data = utils.load_json_from_path(LEVEL_FILE_PATH)
