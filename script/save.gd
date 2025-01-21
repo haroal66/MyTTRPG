@@ -29,7 +29,7 @@ func save_text() -> void:
 	previous_data = data
 
 func load_text() -> void:
-	var node_data = utils.load_json_from_path(SAVE_FILE_PATH)
+	var node_data = get_saved_data()
 	if node_data == {}:
 		return
 	
@@ -37,3 +37,6 @@ func load_text() -> void:
 	for node in save_nodes:
 		if (node is LineEdit or node is Label) and node.name in node_data:
 			node.text = node_data[node.name]
+			
+static func get_saved_data() -> Dictionary:
+	return utils.load_json_from_path(SAVE_FILE_PATH)

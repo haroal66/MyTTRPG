@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://dirhg8ud6isy"]
+
+[ext_resource type="Script" path="res://script/skill.gd" id="1_pcimd"]
+[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="2_pb6y7"]
+[ext_resource type="Script" path="res://script/slider_label.gd" id="3_sc6kq"]
+
+[node name="Athletics" type="HBoxContainer" node_paths=PackedStringArray("label_skill", "label_modifier", "label_attribute")]
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+script = ExtResource("1_pcimd")
+label_skill = NodePath("VBoxContainer/SkillName")
+label_modifier = NodePath("ColorRect/Modifier")
+label_attribute = NodePath("VBoxContainer/Attribute")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Modifier" type="Label" parent="ColorRect" groups=["Persist"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+ 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SkillName" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pb6y7")
+theme_override_font_sizes/font_size = 50
+text = "Athletics"
+horizontal_alignment = 1
+
+[node name="SliderLabel" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+script = ExtResource("3_sc6kq")
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/SliderLabel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 5.0
+tick_count = 1
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="VBoxContainer/SliderLabel"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attribute" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Strength (0)"
+horizontal_alignment = 1
+
+[connection signal="ready" from="VBoxContainer/SliderLabel/HSlider" to="VBoxContainer/SliderLabel" method="_on_h_slider_ready"]
+[connection signal="value_changed" from="VBoxContainer/SliderLabel/HSlider" to="." method="_on_skill_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SliderLabel/HSlider" to="VBoxContainer/SliderLabel" method="_on_h_slider_value_changed"]

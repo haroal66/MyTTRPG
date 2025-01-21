@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MyTTRPG"
-run/main_scene="res://creationAttributes.tscn"
+run/main_scene="res://scene/creationAttributes.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://images/icon.svg"
 

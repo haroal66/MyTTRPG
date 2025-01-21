@@ -1,16 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://dy82ea31j1a61"]
+[gd_scene load_steps=14 format=3 uid="uid://dy82ea31j1a61"]
 
-[ext_resource type="Theme" uid="uid://bnxupl5pqwxf1" path="res://theme.tres" id="1_ahk3r"]
-[ext_resource type="Script" path="res://script/save.gd" id="2_x8t42"]
-[ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="3_wq87w"]
-[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="4_yolmx"]
-[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="5_g31hs"]
-[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="8_t2kdq"]
-[ext_resource type="Script" path="res://script/details.gd" id="10_40nwm"]
-[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="11_0wjnt"]
-[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="12_ciwjv"]
-[ext_resource type="Script" path="res://skills.gd" id="12_o77gr"]
-[ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="14_ebug2"]
+[ext_resource type="Theme" uid="uid://bnxupl5pqwxf1" path="res://theme.tres" id="1_3p8fc"]
+[ext_resource type="Script" path="res://script/save.gd" id="2_ogje5"]
+[ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="3_k2iew"]
+[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="4_usb28"]
+[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="5_vjvw4"]
+[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="6_f31k5"]
+[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="7_1rw8x"]
+[ext_resource type="Script" path="res://script/details.gd" id="8_j1cc6"]
+[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="9_0kdql"]
+[ext_resource type="Script" path="res://script/skills.gd" id="10_qo6mi"]
+[ext_resource type="Script" path="res://script/skill_group.gd" id="11_thc81"]
+[ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="12_323bw"]
 
 [sub_resource type="Theme" id="Theme_xq6bc"]
 
@@ -23,11 +24,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_ahk3r")
-script = ExtResource("2_x8t42")
+theme = ExtResource("1_3p8fc")
+script = ExtResource("2_ogje5")
 
 [node name="Timer" type="Timer" parent="."]
-autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -51,7 +51,7 @@ scale = Vector2(1, 0.997187)
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 4
-texture = ExtResource("3_wq87w")
+texture = ExtResource("3_k2iew")
 expand_mode = 5
 
 [node name="Title" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
@@ -63,7 +63,7 @@ alignment = 1
 [node name="Logo" type="TextureRect" parent="ColorRect/VBoxContainer/Title"]
 custom_minimum_size = Vector2(50, 115)
 layout_mode = 2
-texture = ExtResource("4_yolmx")
+texture = ExtResource("4_usb28")
 expand_mode = 3
 
 [node name="Title text" type="VBoxContainer" parent="ColorRect/VBoxContainer/Title"]
@@ -73,7 +73,7 @@ size_flags_vertical = 6
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Title/Title text"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("5_g31hs")
+theme_override_fonts/font = ExtResource("5_vjvw4")
 theme_override_font_sizes/font_size = 100
 text = "STORMLIGHT"
 horizontal_alignment = 1
@@ -82,7 +82,7 @@ uppercase = true
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Title/Title text"]
 layout_mode = 2
 theme = SubResource("Theme_xq6bc")
-theme_override_fonts/font = ExtResource("5_g31hs")
+theme_override_fonts/font = ExtResource("5_vjvw4")
 theme_override_font_sizes/font_size = 40
 text = "ROLEPLAYING GAME"
 horizontal_alignment = 1
@@ -101,7 +101,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Profile"]
 layout_mode = 2
-texture = ExtResource("8_t2kdq")
+texture = ExtResource("6_f31k5")
 expand_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Profile"]
@@ -109,7 +109,7 @@ layout_mode = 2
 
 [node name="Name" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 theme_override_font_sizes/font_size = 50
 text = "Dalinar Kholin"
 
@@ -119,25 +119,25 @@ theme_override_constants/separation = 10
 
 [node name="Ancestry" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 theme_override_font_sizes/font_size = 40
 text = "Human"
 
 [node name="Path" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 theme_override_font_sizes/font_size = 40
 text = "Soldier"
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 theme_override_font_sizes/font_size = 40
 text = "Level"
 
 [node name="Level" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 theme_override_font_sizes/font_size = 40
 text = "1"
 
@@ -151,7 +151,7 @@ layout_mode = 2
 
 [node name="Container" type="Control" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("10_40nwm")
+script = ExtResource("8_j1cc6")
 
 [node name="Path" type="ColorRect" parent="ColorRect/VBoxContainer/Container"]
 visible = false
@@ -177,7 +177,7 @@ alignment = 1
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Container/Path/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_0wjnt")
+theme_override_fonts/font = ExtResource("9_0kdql")
 text = "PATH DETAIL"
 horizontal_alignment = 1
 
@@ -198,7 +198,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("12_ciwjv")
+theme_override_fonts/normal_font = ExtResource("7_1rw8x")
 bbcode_enabled = true
 text = "Artists of duplicity and sabotage, Agents grasp the threads of fate in the palms of their hands, waiting for the perfect moment to pull and unravel the carefully laid plans of others. Agents can fool even the most prudent with their clever ruses, swift movements, and calculated strikes.
 
@@ -254,7 +254,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Container/Ancestry/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_0wjnt")
+theme_override_fonts/font = ExtResource("9_0kdql")
 text = "ANCESTRY DETAIL"
 horizontal_alignment = 1
 
@@ -275,7 +275,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("12_ciwjv")
+theme_override_fonts/normal_font = ExtResource("7_1rw8x")
 bbcode_enabled = true
 text = "Artists of duplicity and sabotage, Agents grasp the threads of fate in the palms of their hands, waiting for the perfect moment to pull and unravel the carefully laid plans of others. Agents can fool even the most prudent with their clever ruses, swift movements, and calculated strikes.
 
@@ -310,14 +310,14 @@ layout_mode = 2
 [node name="Skills" type="VBoxContainer" parent="ColorRect/VBoxContainer" node_paths=PackedStringArray("label_level", "label_points_remaining", "rich_text_points_max")]
 layout_mode = 2
 size_flags_vertical = 3
-script = ExtResource("12_o77gr")
+script = ExtResource("10_qo6mi")
 label_level = NodePath("../Profile/VBoxContainer/HBoxContainer/Level")
 label_points_remaining = NodePath("HBoxContainer/Label3")
 rich_text_points_max = NodePath("RichTextLabel")
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("11_0wjnt")
+theme_override_fonts/font = ExtResource("9_0kdql")
 theme_override_font_sizes/font_size = 50
 text = "SKILLS"
 horizontal_alignment = 1
@@ -351,12 +351,15 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="Physical" type="ColorRect" parent="ColorRect/VBoxContainer/Skills"]
+[node name="Physical" type="ColorRect" parent="ColorRect/VBoxContainer/Skills" node_paths=PackedStringArray("grid")]
+unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.67, 0.619973, 0.4824, 1)
+script = ExtResource("11_thc81")
+grid = NodePath("VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical"]
 layout_mode = 1
@@ -388,7 +391,7 @@ alignment = 1
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_0wjnt")
+theme_override_fonts/font = ExtResource("9_0kdql")
 text = "PHYSICAL"
 horizontal_alignment = 1
 
@@ -396,220 +399,6 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 6
 columns = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 40
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "+ 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
-text = "Athletics"
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Strength (0)"
-
-[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Strength (0)"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 40
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "+ 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
-text = "Athletics"
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Strength (0)"
-
-[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Strength (0)"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 40
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "+ 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
-text = "Athletics"
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Strength (0)"
-
-[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Strength (0)"
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 40
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "+ 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
-text = "Light Weapons"
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 40
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "+ 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
-text = "Athletics"
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Strength (0)"
-
-[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Strength (0)"
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 40
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "+ 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
-text = "Thievery"
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Physical/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(10, 0)
@@ -620,6 +409,7 @@ custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="Cognitive" type="ColorRect" parent="ColorRect/VBoxContainer/Skills"]
+unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
@@ -656,7 +446,7 @@ alignment = 1
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_0wjnt")
+theme_override_fonts/font = ExtResource("9_0kdql")
 text = "COGNITIVE"
 horizontal_alignment = 1
 
@@ -689,7 +479,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Athletics"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
@@ -716,7 +506,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Agility"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
@@ -743,7 +533,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Heavy Weapons"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
@@ -770,7 +560,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Light Weapons"
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
@@ -797,7 +587,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Stealth"
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
@@ -824,7 +614,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Thievery"
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Cognitive/VBoxContainer/HBoxContainer2"]
@@ -836,6 +626,7 @@ custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="Spiritual" type="ColorRect" parent="ColorRect/VBoxContainer/Skills"]
+unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
@@ -872,7 +663,7 @@ alignment = 1
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_0wjnt")
+theme_override_fonts/font = ExtResource("9_0kdql")
 text = "SPIRITUAL"
 horizontal_alignment = 1
 
@@ -905,7 +696,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Athletics"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
@@ -932,7 +723,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Agility"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
@@ -959,7 +750,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Heavy Weapons"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
@@ -986,7 +777,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Light Weapons"
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
@@ -1013,7 +804,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer5"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Stealth"
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer"]
@@ -1040,7 +831,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2/VBoxContainer/GridContainer/HBoxContainer6"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_ciwjv")
+theme_override_fonts/font = ExtResource("7_1rw8x")
 text = "Thievery"
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Skills/Spiritual/VBoxContainer/HBoxContainer2"]
@@ -1152,7 +943,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("14_ebug2")
+texture = ExtResource("12_323bw")
 expand_mode = 5
 stretch_mode = 4
 

@@ -1,0 +1,29 @@
+{
+	"Physical":
+	{
+		"Athletics": "Strength",
+		"Agility": "Speed",
+		"Heavy Weapons": "Strength",
+		"Light Weapons": "Speed",
+		"Stealth": "Speed",
+		"Thievery": "Speed"
+	},
+	"Cognitive":
+	{
+		"Crafting": "Intellect",
+		"Deduction": "Intellect",
+		"Discipline": "Willpower",
+		"Intimidation": "Willpower",
+		"Lore": "Intellect",
+		"Medicine": "Intellect"
+	},
+	"Spiritual":
+	{
+		"Deception": "Presence",
+		"Insight": "Awareness",
+		"Leadership": "Presence",
+		"Perception": "Awareness",
+		"Persuasion": "Presence",
+		"Survival": "Awareness"
+	}
+}

@@ -1,17 +1,17 @@
 [gd_scene load_steps=19 format=3 uid="uid://bevei76rpj370"]
 
-[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_4bo8a"]
-[ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="2_qy7nf"]
-[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="3_t6ay2"]
-[ext_resource type="Script" path="res://script/save.gd" id="4_1uylq"]
-[ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="5_crw14"]
-[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="6_oblkq"]
-[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="7_xht2f"]
-[ext_resource type="Script" path="res://script/ressources.gd" id="8_f5yqk"]
-[ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="9_8ct7a"]
-[ext_resource type="Script" path="res://script/defense.gd" id="10_8f5fg"]
-[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="11_aalkf"]
-[ext_resource type="Texture2D" uid="uid://cvn1w1f18ps8x" path="res://images/Kholin_Crest_full.svg" id="12_80fim"]
+[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_kk1op"]
+[ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="2_4ytr1"]
+[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="3_72h6g"]
+[ext_resource type="Script" path="res://script/save.gd" id="4_61eln"]
+[ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="5_nya4r"]
+[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="6_bq4jt"]
+[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="7_84dsn"]
+[ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="8_7tlmj"]
+[ext_resource type="Script" path="res://script/ressources.gd" id="9_imh2r"]
+[ext_resource type="Script" path="res://script/defense.gd" id="10_6breh"]
+[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="11_d875j"]
+[ext_resource type="Texture2D" uid="uid://cvn1w1f18ps8x" path="res://images/Kholin_Crest_full.svg" id="12_avpkw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4nch"]
 content_margin_left = 4.0
@@ -42,7 +42,7 @@ corner_detail = 5
 [sub_resource type="ImageTexture" id="ImageTexture_8656j"]
 
 [sub_resource type="Theme" id="Theme_68jeh"]
-default_font = ExtResource("1_4bo8a")
+default_font = ExtResource("1_kk1op")
 Button/colors/font_color = Color(0.1, 0.1, 0.1, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.1, 0.1, 0.1, 1)
@@ -61,16 +61,16 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 40
-Button/fonts/font = ExtResource("1_4bo8a")
+Button/fonts/font = ExtResource("1_kk1op")
 Button/styles/disabled = SubResource("StyleBoxFlat_c4nch")
 Button/styles/hover = SubResource("StyleBoxFlat_ohr2q")
-Button/styles/normal = ExtResource("2_qy7nf")
-CheckBox/fonts/font = ExtResource("1_4bo8a")
-CheckButton/fonts/font = ExtResource("1_4bo8a")
-CodeEdit/fonts/font = ExtResource("1_4bo8a")
-ColorPickerButton/fonts/font = ExtResource("1_4bo8a")
-GraphNodeTitleLabel/fonts/font = ExtResource("1_4bo8a")
-ItemList/fonts/font = ExtResource("1_4bo8a")
+Button/styles/normal = ExtResource("2_4ytr1")
+CheckBox/fonts/font = ExtResource("1_kk1op")
+CheckButton/fonts/font = ExtResource("1_kk1op")
+CodeEdit/fonts/font = ExtResource("1_kk1op")
+ColorPickerButton/fonts/font = ExtResource("1_kk1op")
+GraphNodeTitleLabel/fonts/font = ExtResource("1_kk1op")
+ItemList/fonts/font = ExtResource("1_kk1op")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -80,30 +80,30 @@ Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 40
-Label/fonts/font = ExtResource("1_4bo8a")
+Label/fonts/font = ExtResource("1_kk1op")
 Label/styles/normal = SubResource("StyleBoxEmpty_wlbbs")
 LineEdit/font_sizes/font_size = 40
-LineEdit/fonts/font = ExtResource("3_t6ay2")
-LinkButton/fonts/font = ExtResource("1_4bo8a")
-MenuBar/fonts/font = ExtResource("1_4bo8a")
-MenuButton/fonts/font = ExtResource("1_4bo8a")
-OptionButton/fonts/font = ExtResource("3_t6ay2")
-PopupMenu/fonts/font = ExtResource("3_t6ay2")
-PopupMenu/fonts/font_separator = ExtResource("1_4bo8a")
-ProgressBar/fonts/font = ExtResource("1_4bo8a")
-RichTextLabel/fonts/bold_font = ExtResource("1_4bo8a")
-RichTextLabel/fonts/bold_italics_font = ExtResource("1_4bo8a")
-RichTextLabel/fonts/italics_font = ExtResource("1_4bo8a")
-RichTextLabel/fonts/mono_font = ExtResource("1_4bo8a")
-RichTextLabel/fonts/normal_font = ExtResource("1_4bo8a")
+LineEdit/fonts/font = ExtResource("3_72h6g")
+LinkButton/fonts/font = ExtResource("1_kk1op")
+MenuBar/fonts/font = ExtResource("1_kk1op")
+MenuButton/fonts/font = ExtResource("1_kk1op")
+OptionButton/fonts/font = ExtResource("3_72h6g")
+PopupMenu/fonts/font = ExtResource("3_72h6g")
+PopupMenu/fonts/font_separator = ExtResource("1_kk1op")
+ProgressBar/fonts/font = ExtResource("1_kk1op")
+RichTextLabel/fonts/bold_font = ExtResource("1_kk1op")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_kk1op")
+RichTextLabel/fonts/italics_font = ExtResource("1_kk1op")
+RichTextLabel/fonts/mono_font = ExtResource("1_kk1op")
+RichTextLabel/fonts/normal_font = ExtResource("1_kk1op")
 SpinBox/icons/updown = SubResource("ImageTexture_8656j")
-TabBar/fonts/font = ExtResource("1_4bo8a")
-TabContainer/fonts/font = ExtResource("1_4bo8a")
-TextEdit/fonts/font = ExtResource("1_4bo8a")
-TooltipLabel/fonts/font = ExtResource("3_t6ay2")
-Tree/fonts/font = ExtResource("1_4bo8a")
-Tree/fonts/title_button_font = ExtResource("1_4bo8a")
-Window/fonts/title_font = ExtResource("1_4bo8a")
+TabBar/fonts/font = ExtResource("1_kk1op")
+TabContainer/fonts/font = ExtResource("1_kk1op")
+TextEdit/fonts/font = ExtResource("1_kk1op")
+TooltipLabel/fonts/font = ExtResource("3_72h6g")
+Tree/fonts/font = ExtResource("1_kk1op")
+Tree/fonts/title_button_font = ExtResource("1_kk1op")
+Window/fonts/title_font = ExtResource("1_kk1op")
 
 [sub_resource type="Theme" id="Theme_xq6bc"]
 
@@ -117,7 +117,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("Theme_68jeh")
-script = ExtResource("4_1uylq")
+script = ExtResource("4_61eln")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -144,7 +144,7 @@ scale = Vector2(1, 0.997187)
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 4
-texture = ExtResource("5_crw14")
+texture = ExtResource("5_nya4r")
 expand_mode = 5
 
 [node name="Title" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
@@ -156,7 +156,7 @@ alignment = 1
 [node name="Logo" type="TextureRect" parent="ColorRect/VBoxContainer/Title"]
 custom_minimum_size = Vector2(50, 115)
 layout_mode = 2
-texture = ExtResource("6_oblkq")
+texture = ExtResource("6_bq4jt")
 expand_mode = 3
 
 [node name="Title text" type="VBoxContainer" parent="ColorRect/VBoxContainer/Title"]
@@ -166,7 +166,7 @@ size_flags_vertical = 6
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Title/Title text"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_4bo8a")
+theme_override_fonts/font = ExtResource("1_kk1op")
 theme_override_font_sizes/font_size = 100
 text = "STORMLIGHT"
 horizontal_alignment = 1
@@ -175,7 +175,7 @@ uppercase = true
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Title/Title text"]
 layout_mode = 2
 theme = SubResource("Theme_xq6bc")
-theme_override_fonts/font = ExtResource("1_4bo8a")
+theme_override_fonts/font = ExtResource("1_kk1op")
 theme_override_font_sizes/font_size = 40
 text = "ROLEPLAYING GAME"
 horizontal_alignment = 1
@@ -194,7 +194,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/Profile"]
 layout_mode = 2
-texture = ExtResource("7_xht2f")
+texture = ExtResource("7_84dsn")
 expand_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Profile"]
@@ -202,7 +202,7 @@ layout_mode = 2
 
 [node name="Name" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_t6ay2")
+theme_override_fonts/font = ExtResource("3_72h6g")
 theme_override_font_sizes/font_size = 50
 text = "Dalinar Kholin"
 
@@ -212,25 +212,25 @@ theme_override_constants/separation = 10
 
 [node name="Ancestry" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_t6ay2")
+theme_override_fonts/font = ExtResource("3_72h6g")
 theme_override_font_sizes/font_size = 40
 text = "Human"
 
 [node name="Path" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_t6ay2")
+theme_override_fonts/font = ExtResource("3_72h6g")
 theme_override_font_sizes/font_size = 40
 text = "Soldier"
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_t6ay2")
+theme_override_fonts/font = ExtResource("3_72h6g")
 theme_override_font_sizes/font_size = 40
 text = "Level"
 
 [node name="Level" type="Label" parent="ColorRect/VBoxContainer/Profile/VBoxContainer/HBoxContainer" groups=["Persist"]]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_t6ay2")
+theme_override_fonts/font = ExtResource("3_72h6g")
 theme_override_font_sizes/font_size = 40
 text = "1"
 
@@ -239,7 +239,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-texture = ExtResource("9_8ct7a")
+texture = ExtResource("8_7tlmj")
 expand_mode = 3
 stretch_mode = 4
 
@@ -279,7 +279,7 @@ layout_mode = 2
 
 [node name="Ressources" type="VBoxContainer" parent="ColorRect/VBoxContainer" node_paths=PackedStringArray("label_health", "label_healthmax", "label_focus", "label_focusmax", "label_investiture", "label_investituremax") groups=["Persist"]]
 layout_mode = 2
-script = ExtResource("8_f5yqk")
+script = ExtResource("9_imh2r")
 label_health = NodePath("HBoxContainer2/Health/HBoxContainer/Health")
 label_healthmax = NodePath("HBoxContainer2/Health/HBoxContainer/HealthMax")
 label_focus = NodePath("HBoxContainer2/Focus/HBoxContainer3/Focus")
@@ -471,7 +471,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 1
-script = ExtResource("10_8f5fg")
+script = ExtResource("10_6breh")
 label_attribute1 = NodePath("HBoxContainer/Strength/VBoxContainer/Strength")
 label_attribute2 = NodePath("HBoxContainer/Speed/VBoxContainer/Speed")
 label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
@@ -479,7 +479,7 @@ label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Physical/VBoxContainer/HBoxContainer2/Physical"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_aalkf")
+theme_override_fonts/font = ExtResource("11_d875j")
 text = "PHYSICAL"
 horizontal_alignment = 1
 
@@ -539,7 +539,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 125)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("12_80fim")
+texture = ExtResource("12_avpkw")
 expand_mode = 1
 stretch_mode = 5
 
@@ -633,7 +633,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 1
-script = ExtResource("10_8f5fg")
+script = ExtResource("10_6breh")
 label_attribute1 = NodePath("HBoxContainer/Intellect/VBoxContainer/Intellect")
 label_attribute2 = NodePath("HBoxContainer/Willpower/VBoxContainer/Willpower")
 label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
@@ -641,7 +641,7 @@ label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Cognitive/VBoxContainer/HBoxContainer2/Cognitive"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_aalkf")
+theme_override_fonts/font = ExtResource("11_d875j")
 text = "COGNITIVE"
 horizontal_alignment = 1
 
@@ -701,7 +701,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 125)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("12_80fim")
+texture = ExtResource("12_avpkw")
 expand_mode = 1
 stretch_mode = 5
 
@@ -795,7 +795,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 1
-script = ExtResource("10_8f5fg")
+script = ExtResource("10_6breh")
 label_attribute1 = NodePath("HBoxContainer/Awareness/VBoxContainer/Awareness")
 label_attribute2 = NodePath("HBoxContainer/Presence/VBoxContainer/Presence")
 label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
@@ -803,7 +803,7 @@ label_defense = NodePath("HBoxContainer/Defense/TextureRect/Label")
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Spiritual/VBoxContainer/HBoxContainer2/Spiritual"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_aalkf")
+theme_override_fonts/font = ExtResource("11_d875j")
 text = "SPIRITUAL"
 horizontal_alignment = 1
 
@@ -863,7 +863,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 125)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("12_80fim")
+texture = ExtResource("12_avpkw")
 expand_mode = 1
 stretch_mode = 5
 

@@ -1,19 +1,19 @@
 [gd_scene load_steps=20 format=3 uid="uid://dl3rr33ghb2be"]
 
-[ext_resource type="Theme" uid="uid://bnxupl5pqwxf1" path="res://theme.tres" id="1_kaugj"]
-[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="1_ldj68"]
-[ext_resource type="Script" path="res://script/creation.gd" id="2_0i34l"]
-[ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="2_hj6i5"]
-[ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="5_x6sj4"]
-[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="6_by6v1"]
-[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="7_mtk2g"]
-[ext_resource type="Texture2D" uid="uid://d0yuh8iinaujm" path="res://images/eye-white.png" id="7_oqqw3"]
-[ext_resource type="Texture2D" uid="uid://dt11ygkdtbvme" path="res://images/singer-ancestry-thumbnail.webp" id="8_trocc"]
-[ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="9_xhfpe"]
-[ext_resource type="Script" path="res://script/details.gd" id="10_mtj6j"]
-[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="10_ou5ir"]
-[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="11_xfqi3"]
-[ext_resource type="Script" path="res://script/attributes.gd" id="13_jc7af"]
+[ext_resource type="Theme" uid="uid://bnxupl5pqwxf1" path="res://theme.tres" id="1_6hkho"]
+[ext_resource type="Script" path="res://script/creation.gd" id="2_n6tnp"]
+[ext_resource type="Texture2D" uid="uid://34kkimgbqxby" path="res://images/decorativeline.png" id="3_2twuc"]
+[ext_resource type="Texture2D" uid="uid://cvwt8gilo3348" path="res://images/Drapeau.jpg" id="4_itssq"]
+[ext_resource type="FontFile" uid="uid://cahigei6y27u0" path="res://font/PenumbraWebPro-Serif.ttf" id="5_3glu0"]
+[ext_resource type="StyleBox" uid="uid://v1b7kbjge1ks" path="res://button.tres" id="6_gwpn2"]
+[ext_resource type="Texture2D" uid="uid://d0yuh8iinaujm" path="res://images/eye-white.png" id="7_dxn8y"]
+[ext_resource type="Texture2D" uid="uid://dmxgnmy82vc3w" path="res://images/human-ancestry-thumbnail.webp" id="8_xphvm"]
+[ext_resource type="Texture2D" uid="uid://dt11ygkdtbvme" path="res://images/singer-ancestry-thumbnail.webp" id="9_pgrek"]
+[ext_resource type="Script" path="res://script/details.gd" id="10_3rci3"]
+[ext_resource type="FontVariation" uid="uid://cnpfom1j7o1dg" path="res://font/PenumbraBold.tres" id="11_nt20o"]
+[ext_resource type="FontFile" uid="uid://bjlv64ufrkldd" path="res://font/selawk.ttf" id="12_ukl2a"]
+[ext_resource type="Script" path="res://script/attributes.gd" id="13_h4l1h"]
+[ext_resource type="Texture2D" uid="uid://dgll5orkijpr2" path="res://images/Javani_white.svg" id="14_qk0bt"]
 
 [sub_resource type="Theme" id="Theme_xq6bc"]
 
@@ -37,8 +37,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_kaugj")
-script = ExtResource("2_0i34l")
+theme = ExtResource("1_6hkho")
+script = ExtResource("2_n6tnp")
 line_edit_level = NodePath("ColorRect/VBoxContainer/Profile/RightGrid/Level/Level")
 line_edit_strength = NodePath("ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical/HBoxContainer/Strength/VBoxContainer/Strength")
 line_edit_willpower = NodePath("ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive/HBoxContainer/Willpower/VBoxContainer/Willpower")
@@ -68,7 +68,7 @@ scale = Vector2(1, 0.997187)
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 4
-texture = ExtResource("5_x6sj4")
+texture = ExtResource("3_2twuc")
 expand_mode = 5
 
 [node name="Title" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
@@ -80,7 +80,7 @@ alignment = 1
 [node name="Logo" type="TextureRect" parent="ColorRect/VBoxContainer/Title"]
 custom_minimum_size = Vector2(50, 115)
 layout_mode = 2
-texture = ExtResource("6_by6v1")
+texture = ExtResource("4_itssq")
 expand_mode = 3
 
 [node name="Title text" type="VBoxContainer" parent="ColorRect/VBoxContainer/Title"]
@@ -90,7 +90,7 @@ size_flags_vertical = 6
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Title/Title text"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_ldj68")
+theme_override_fonts/font = ExtResource("5_3glu0")
 theme_override_font_sizes/font_size = 100
 text = "STORMLIGHT"
 horizontal_alignment = 1
@@ -99,7 +99,7 @@ uppercase = true
 [node name="Label2" type="Label" parent="ColorRect/VBoxContainer/Title/Title text"]
 layout_mode = 2
 theme = SubResource("Theme_xq6bc")
-theme_override_fonts/font = ExtResource("1_ldj68")
+theme_override_fonts/font = ExtResource("5_3glu0")
 theme_override_font_sizes/font_size = 40
 text = "ROLEPLAYING GAME"
 horizontal_alignment = 1
@@ -134,8 +134,8 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = ExtResource("2_hj6i5")
-theme_override_styles/normal = ExtResource("2_hj6i5")
+theme_override_styles/focus = ExtResource("6_gwpn2")
+theme_override_styles/normal = ExtResource("6_gwpn2")
 
 [node name="Level" type="HBoxContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid"]
 layout_mode = 2
@@ -151,8 +151,8 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = ExtResource("2_hj6i5")
-theme_override_styles/normal = ExtResource("2_hj6i5")
+theme_override_styles/focus = ExtResource("6_gwpn2")
+theme_override_styles/normal = ExtResource("6_gwpn2")
 text = "1"
 virtual_keyboard_type = 2
 
@@ -197,7 +197,7 @@ theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_6jsjx")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_1o3nb")
-icon = ExtResource("7_oqqw3")
+icon = ExtResource("7_dxn8y")
 icon_alignment = 1
 expand_icon = true
 
@@ -217,9 +217,9 @@ uppercase = true
 layout_mode = 2
 item_count = 2
 popup/item_0/text = "Human"
-popup/item_0/icon = ExtResource("7_mtk2g")
+popup/item_0/icon = ExtResource("8_xphvm")
 popup/item_1/text = "Singer"
-popup/item_1/icon = ExtResource("8_trocc")
+popup/item_1/icon = ExtResource("9_pgrek")
 popup/item_1/id = 1
 
 [node name="MarginContainer5" type="MarginContainer" parent="ColorRect/VBoxContainer/Profile/RightGrid/Ancestry"]
@@ -237,7 +237,7 @@ theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_x445s")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_1o3nb")
-icon = ExtResource("7_oqqw3")
+icon = ExtResource("7_dxn8y")
 icon_alignment = 1
 expand_icon = true
 
@@ -251,7 +251,7 @@ layout_mode = 2
 
 [node name="Container" type="Control" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("10_mtj6j")
+script = ExtResource("10_3rci3")
 
 [node name="Path" type="ColorRect" parent="ColorRect/VBoxContainer/Container"]
 visible = false
@@ -277,7 +277,7 @@ alignment = 1
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Container/Path/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_xfqi3")
+theme_override_fonts/font = ExtResource("11_nt20o")
 text = "PATH DETAIL"
 horizontal_alignment = 1
 
@@ -298,7 +298,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("10_ou5ir")
+theme_override_fonts/normal_font = ExtResource("12_ukl2a")
 bbcode_enabled = true
 text = "Artists of duplicity and sabotage, Agents grasp the threads of fate in the palms of their hands, waiting for the perfect moment to pull and unravel the carefully laid plans of others. Agents can fool even the most prudent with their clever ruses, swift movements, and calculated strikes.
 
@@ -354,7 +354,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Container/Ancestry/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_xfqi3")
+theme_override_fonts/font = ExtResource("11_nt20o")
 text = "ANCESTRY DETAIL"
 horizontal_alignment = 1
 
@@ -375,7 +375,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("10_ou5ir")
+theme_override_fonts/normal_font = ExtResource("12_ukl2a")
 bbcode_enabled = true
 text = "Artists of duplicity and sabotage, Agents grasp the threads of fate in the palms of their hands, waiting for the perfect moment to pull and unravel the carefully laid plans of others. Agents can fool even the most prudent with their clever ruses, swift movements, and calculated strikes.
 
@@ -409,13 +409,13 @@ layout_mode = 2
 
 [node name="Attributes" type="VBoxContainer" parent="ColorRect/VBoxContainer" node_paths=PackedStringArray("line_edit_level", "label_points_remaining")]
 layout_mode = 2
-script = ExtResource("13_jc7af")
+script = ExtResource("13_h4l1h")
 line_edit_level = NodePath("../Profile/RightGrid/Level/Level")
 label_points_remaining = NodePath("HBoxContainer/Label3")
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("11_xfqi3")
+theme_override_fonts/font = ExtResource("11_nt20o")
 theme_override_font_sizes/font_size = 50
 text = "ATTRIBUTES"
 horizontal_alignment = 1
@@ -482,7 +482,7 @@ alignment = 1
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/Physical/VBoxContainer/HBoxContainer2/Physical"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_xfqi3")
+theme_override_fonts/font = ExtResource("11_nt20o")
 text = "PHYSICAL"
 horizontal_alignment = 1
 
@@ -612,7 +612,7 @@ alignment = 1
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/Cognitive/VBoxContainer/HBoxContainer2/Cognitive"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_xfqi3")
+theme_override_fonts/font = ExtResource("11_nt20o")
 text = "COGNITIVE"
 horizontal_alignment = 1
 
@@ -742,7 +742,7 @@ alignment = 1
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Attributes/Spiritual/VBoxContainer/HBoxContainer2/Spiritual"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("11_xfqi3")
+theme_override_fonts/font = ExtResource("11_nt20o")
 text = "SPIRITUAL"
 horizontal_alignment = 1
 
@@ -937,7 +937,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("9_xhfpe")
+texture = ExtResource("14_qk0bt")
 expand_mode = 5
 stretch_mode = 4
 
